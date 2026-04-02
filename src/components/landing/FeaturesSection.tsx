@@ -35,8 +35,13 @@ export default function FeaturesSection() {
 
     const onScroll = () => {
       const rect = section.getBoundingClientRect();
+      const sectionTop = rect.top + window.scrollY;
+      const sectionHeight = section.offsetHeight;
       const p = Math.min(
-        Math.max(-rect.top / (rect.height - window.innerHeight), 0),
+        Math.max(
+          (window.scrollY - sectionTop + window.innerHeight * 0.6) / (sectionHeight * 0.8),
+          0
+        ),
         1
       );
       setProgress(p);
@@ -47,7 +52,7 @@ export default function FeaturesSection() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const pointThresholds = [0, 0.33, 0.66, 1];
+  const pointThresholds = [0.2, 0.45, 0.7, 0.95];
 
   return (
     <section id="features" ref={sectionRef} className="py-24 bg-background">

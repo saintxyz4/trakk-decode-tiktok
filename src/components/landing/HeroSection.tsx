@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import AnimatedBlobs from "./AnimatedBlobs";
 
 export default function HeroSection() {
@@ -34,6 +35,16 @@ export default function HeroSection() {
           La plateforme d'intelligence artificielle qui décode les performances de vos vidéos TikTok et transforme vos données en stratégies de croissance actionnables.
         </motion.p>
 
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7, duration: 0.6 }}
+          className="mt-10 flex justify-center"
+        >
+          <Link to="/signup" className="cta-btn">
+            Commencer l'analyse gratuite
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
