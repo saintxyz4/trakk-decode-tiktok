@@ -35,8 +35,13 @@ export default function FeaturesSection() {
 
     const onScroll = () => {
       const rect = section.getBoundingClientRect();
+      const sectionTop = rect.top + window.scrollY;
+      const sectionHeight = section.offsetHeight;
       const p = Math.min(
-        Math.max(-rect.top / (rect.height - window.innerHeight), 0),
+        Math.max(
+          (window.scrollY - sectionTop + window.innerHeight * 0.6) / (sectionHeight * 0.8),
+          0
+        ),
         1
       );
       setProgress(p);
