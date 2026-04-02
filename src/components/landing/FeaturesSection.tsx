@@ -22,7 +22,7 @@ const features = [
 ];
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 30 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
@@ -34,7 +34,13 @@ export default function FeaturesSection() {
   return (
     <section id="features" className="py-24 bg-background">
       <div className="container">
-        <div className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
+        >
           <h2 className="text-3xl md:text-4xl font-bold">
             Trois outils, un seul{" "}
             <span className="font-accent glow-text-dark">objectif</span>
@@ -42,7 +48,7 @@ export default function FeaturesSection() {
           <p className="mt-4 text-muted-foreground max-w-lg mx-auto">
             Décodez l'algorithme, optimisez votre stratégie de contenu et accélérez la croissance de votre audience.
           </p>
-        </div>
+        </motion.div>
 
         <div className="max-w-3xl mx-auto">
           {features.map((f, i) => (
@@ -53,16 +59,18 @@ export default function FeaturesSection() {
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
               variants={fadeUp}
-              className={`feature-row relative py-10 ${i < features.length - 1 ? "border-b border-border" : ""}`}
+              className={`feature-row relative py-12 ${i < features.length - 1 ? "border-b border-border" : ""}`}
             >
-              <span className="feature-num absolute -left-2 top-6 text-[80px] font-light leading-none select-none pointer-events-none hidden md:block">
-                {f.num}
-              </span>
-              <div className="md:pl-28">
-                <h3 className="text-xl font-bold mb-2">{f.title}</h3>
-                <p className="text-muted-foreground leading-relaxed max-w-md">
-                  {f.description}
-                </p>
+              <div className="flex items-start gap-6 md:gap-10">
+                <span className="feature-num text-[64px] md:text-[80px] font-light leading-none select-none shrink-0 w-16 md:w-24 text-right">
+                  {f.num}
+                </span>
+                <div className="pt-2 md:pt-4">
+                  <h3 className="text-xl font-bold mb-2">{f.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed max-w-md">
+                    {f.description}
+                  </p>
+                </div>
               </div>
             </motion.div>
           ))}

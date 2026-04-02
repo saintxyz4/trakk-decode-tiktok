@@ -4,7 +4,7 @@ import { Check } from "lucide-react";
 import { motion } from "framer-motion";
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 30 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
@@ -63,14 +63,20 @@ export default function PricingSection() {
   return (
     <section id="pricing" className="py-24 bg-secondary/50">
       <div className="container">
-        <div className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
+        >
           <h2 className="text-3xl md:text-4xl font-bold">
             Un plan pour chaque <span className="font-accent glow-text-dark">ambition</span>
           </h2>
           <p className="mt-4 text-muted-foreground max-w-lg mx-auto">
             Pas d'engagement. Annulez à tout moment. Commencez gratuitement et évoluez selon vos besoins.
           </p>
-        </div>
+        </motion.div>
         <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {tiers.map((tier, i) => (
             <motion.div
@@ -80,6 +86,7 @@ export default function PricingSection() {
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeUp}
+              whileHover={{ y: -6, transition: { duration: 0.2 } }}
               className={`glass-card p-8 flex flex-col ${tier.highlighted ? "ring-2 ring-primary shadow-lg relative" : ""}`}
             >
               {tier.highlighted && (
