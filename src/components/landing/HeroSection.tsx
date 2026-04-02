@@ -43,21 +43,23 @@ export default function HeroSection() {
           transition={{ delay: 0.7, duration: 0.5 }}
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <Button
-            size="lg"
-            variant="outline"
-            className="group bg-primary-foreground text-foreground border-0 hover:bg-primary-foreground/90 overflow-hidden relative"
-            asChild
-          >
-            <Link to="/signup">
-              <span className="inline-flex items-center gap-1 transition-transform duration-300 group-hover:-translate-y-full">
-                Commencer l'analyse gratuite <ArrowRight className="h-4 w-4" />
-              </span>
-              <span className="absolute inset-0 inline-flex items-center justify-center gap-1 translate-y-full transition-transform duration-300 group-hover:translate-y-0">
-                Commencer l'analyse gratuite <ArrowRight className="h-4 w-4" />
-              </span>
-            </Link>
-          </Button>
+          <div className="cube-btn-wrapper">
+            <Button
+              size="lg"
+              variant="outline"
+              className="group cube-btn bg-primary-foreground text-foreground border-0 hover:bg-primary-foreground/90"
+              asChild
+            >
+              <Link to="/signup">
+                <span className="cube-face cube-face-front inline-flex items-center gap-1">
+                  Commencer l'analyse gratuite <ArrowRight className="h-4 w-4" />
+                </span>
+                <span className="cube-face cube-face-top inline-flex items-center gap-1">
+                  Commencer l'analyse gratuite <ArrowRight className="h-4 w-4" />
+                </span>
+              </Link>
+            </Button>
+          </div>
         </motion.div>
       </div>
     </section>
