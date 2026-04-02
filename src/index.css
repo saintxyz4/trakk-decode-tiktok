@@ -65,9 +65,15 @@
 
 @layer utilities {
   .font-accent {
-    font-family: 'Sedan', serif;
+    font-family: 'EB Garamond', serif;
     font-style: italic;
     color: hsl(244, 95%, 57%);
+  }
+
+  .font-accent-light {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    color: hsl(0, 0%, 100%);
   }
 
   .hero-gradient {
