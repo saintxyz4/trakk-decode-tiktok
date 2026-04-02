@@ -43,23 +43,16 @@ export default function HeroSection() {
           transition={{ delay: 0.7, duration: 0.5 }}
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <div className="cube-btn-wrapper">
-            <Button
-              size="lg"
-              variant="outline"
-              className="group cube-btn bg-primary-foreground text-foreground border-0 hover:bg-primary-foreground/90"
-              asChild
-            >
-              <Link to="/signup">
-                <span className="cube-face cube-face-front inline-flex items-center gap-1">
-                  Commencer l'analyse gratuite <ArrowRight className="h-4 w-4" />
-                </span>
-                <span className="cube-face cube-face-top inline-flex items-center gap-1">
-                  Commencer l'analyse gratuite <ArrowRight className="h-4 w-4" />
-                </span>
-              </Link>
-            </Button>
-          </div>
+          <Link to="/signup" className="flip-btn-wrapper">
+            <div className="flip-btn">
+              <span className="flip-face flip-face-front">
+                Commencer l'analyse gratuite <ArrowRight className="h-4 w-4 inline-block ml-1" />
+              </span>
+              <span className="flip-face flip-face-back">
+                C'est parti <ArrowRight className="h-4 w-4 inline-block ml-1" />
+              </span>
+            </div>
+          </Link>
         </motion.div>
       </div>
     </section>
