@@ -52,7 +52,7 @@ export default function FeaturesSection() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const pointThresholds = [0, 0.33, 0.66, 1];
+  const pointThresholds = [0.2, 0.45, 0.7, 0.95];
 
   return (
     <section id="features" ref={sectionRef} className="py-24 bg-background">
