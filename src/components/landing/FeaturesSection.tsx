@@ -62,7 +62,7 @@ export default function FeaturesSection() {
               className={`feature-row relative py-12 ${i < features.length - 1 ? "border-b border-border" : ""}`}
             >
               <div className="flex items-start gap-6 md:gap-10">
-                <span className="feature-num text-[64px] md:text-[80px] font-light leading-none select-none shrink-0 w-16 md:w-24 text-right">
+                <span className="feature-num text-[72px] md:text-[96px] font-bold leading-none select-none shrink-0 w-20 md:w-28 text-right font-accent" style={{ fontStyle: 'normal' }}>
                   {f.num}
                 </span>
                 <div className="pt-2 md:pt-4">

@@ -24,7 +24,7 @@ export default function HeroSection() {
           transition={{ delay: 0.25, duration: 0.7 }}
           className="mt-4 md:mt-6 text-4xl md:text-6xl font-bold text-primary-foreground max-w-3xl mx-auto leading-tight"
         >
-          <span className="font-accent-light text-4xl md:text-6xl glow-text">Trakk.</span>{" "}
+          <span className="font-accent-light text-4xl md:text-6xl super-glow">Trakk.</span>{" "}
           vous les révèle.
         </motion.p>
 

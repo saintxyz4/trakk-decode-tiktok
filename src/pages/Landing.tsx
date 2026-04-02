@@ -16,8 +16,8 @@ export default function Landing() {
         className="fixed top-0 inset-x-0 z-50 bg-background/80 backdrop-blur-md border-b border-thin border-border"
       >
         <div className="container flex items-center justify-between h-14">
-          <Link to="/" className="text-xl font-semibold tracking-tight">
-            Trakk<span className="font-accent text-lg">.</span>
+        <Link to="/" className="text-xl font-semibold tracking-tight">
+            Trakk<span className="font-accent text-lg super-glow-dark">.</span>
           </Link>
           <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
             <a href="#features" className="hover:text-foreground transition-colors">Fonctionnalités</a>
