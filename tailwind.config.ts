@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        accent: ["Sedan", "serif"],
+        sans: ["Space Grotesk", "system-ui", "sans-serif"],
+        accent: ["EB Garamond", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",
