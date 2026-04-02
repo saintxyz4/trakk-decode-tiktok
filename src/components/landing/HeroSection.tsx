@@ -17,7 +17,7 @@ export default function HeroSection() {
         >
           L'algorithme TikTok a des secrets.
           <br />
-          <span className="font-accent-light text-4xl md:text-6xl">Trakk</span>{" "}
+          <span className="font-accent-light text-4xl md:text-6xl glow-text">Trakk.</span>{" "}
           vous les révèle.
         </motion.h1>
         <motion.p
@@ -26,8 +26,7 @@ export default function HeroSection() {
           transition={{ delay: 0.3, duration: 0.6 }}
           className="mt-6 text-lg text-primary-foreground/70 max-w-xl mx-auto"
         >
-          Analysez vos vidéos, comprenez pourquoi elles ne percent pas, et
-          obtenez un plan d'action concret grâce à l'IA.
+          La plateforme d'intelligence artificielle qui décode les performances de vos vidéos TikTok et transforme vos données en stratégies de croissance actionnables.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -42,7 +41,7 @@ export default function HeroSection() {
             asChild
           >
             <Link to="/signup">
-              Analyser ma première vidéo <ArrowRight className="ml-1 h-4 w-4" />
+              Commencer l'analyse gratuite <ArrowRight className="ml-1 h-4 w-4" />
             </Link>
           </Button>
         </motion.div>

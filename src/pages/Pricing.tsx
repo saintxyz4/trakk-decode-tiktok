@@ -13,24 +13,40 @@ const tiers = [
     name: "Free",
     price: "0€",
     period: "",
-    features: ["1 analyse offerte", "Niche du jour (aperçu flouté)", "Accès limité aux features"],
-    cta: "Commencer",
+    description: "Découvrez la puissance de l'analyse IA sans engagement.",
+    features: ["1 diagnostic vidéo offert", "Niche du jour — aperçu limité", "Accès à l'interface complète"],
+    cta: "Commencer gratuitement",
     highlighted: false,
   },
   {
     name: "Créateur",
     price: "20€",
     period: "/mois",
-    features: ["20 analyses/mois", "1 niche complète/jour", "Historique des analyses", "Support prioritaire"],
-    cta: "S'abonner",
+    description: "Pour les créateurs sérieux qui veulent passer au niveau supérieur.",
+    features: [
+      "20 diagnostics IA par mois",
+      "1 niche complète débloquée chaque jour",
+      "Historique illimité de vos analyses",
+      "Reverse-engineering de vidéos virales",
+      "Support prioritaire sous 24h",
+    ],
+    cta: "Débloquer Créateur",
     highlighted: true,
   },
   {
     name: "Studio",
     price: "59€",
     period: "/mois",
-    features: ["Analyses illimitées", "2 niches/jour", "Chatbot IA — 100 msg/mois", "Accès à toutes les features", "Support dédié"],
-    cta: "S'abonner",
+    description: "L'arsenal complet pour les créateurs et agences qui visent l'excellence.",
+    features: [
+      "Diagnostics IA illimités",
+      "2 niches complètes par jour",
+      "Coach IA dédié — 100 messages/mois",
+      "Accès anticipé aux nouvelles fonctionnalités",
+      "Support dédié & prioritaire",
+      "Toutes les fonctionnalités incluses",
+    ],
+    cta: "Passer à Studio",
     highlighted: false,
   },
 ];
@@ -58,9 +74,9 @@ export default function Pricing() {
         <div className="container">
           <div className="text-center mb-16">
             <h1 className="text-4xl font-bold">
-              Choisissez votre <span className="font-accent">plan</span>
+              Choisissez votre <span className="font-accent glow-text-dark">plan</span>
             </h1>
-            <p className="mt-4 text-muted-foreground">Pas d'engagement. Annulez à tout moment.</p>
+            <p className="mt-4 text-muted-foreground">Pas d'engagement. Annulez à tout moment. Commencez gratuitement.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {tiers.map((tier, i) => (
@@ -75,10 +91,11 @@ export default function Pricing() {
               >
                 {tier.highlighted && (
                   <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-medium px-3 py-1 rounded-full">
-                    Populaire
+                    Le plus populaire
                   </span>
                 )}
                 <h3 className="text-lg font-semibold">{tier.name}</h3>
+                <p className="text-sm text-muted-foreground mt-1">{tier.description}</p>
                 <div className="mt-4 mb-6">
                   <span className="text-4xl font-bold">{tier.price}</span>
                   <span className="text-muted-foreground text-sm">{tier.period}</span>

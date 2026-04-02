@@ -14,8 +14,8 @@ export default function Landing() {
             Trakk<span className="font-accent text-lg">.</span>
           </Link>
           <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-            <a href="#features" className="hover:text-foreground transition-colors">Features</a>
-            <a href="#pricing" className="hover:text-foreground transition-colors">Pricing</a>
+            <a href="#features" className="hover:text-foreground transition-colors">Fonctionnalités</a>
+            <a href="#pricing" className="hover:text-foreground transition-colors">Tarifs</a>
           </div>
           <div className="flex items-center gap-3">
             <Button variant="ghost" size="sm" asChild>

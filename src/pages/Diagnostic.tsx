@@ -14,7 +14,6 @@ export default function Diagnostic() {
     e.preventDefault();
     if (!file && !url) return;
     setLoading(true);
-    // Placeholder for API call
     setTimeout(() => {
       setResult(
         "## Diagnostic de votre vidéo\n\n" +
@@ -37,7 +36,7 @@ export default function Diagnostic() {
       <div>
         <h1 className="text-2xl font-bold">Diagnostic vidéo</h1>
         <p className="text-muted-foreground mt-1">
-          Uploadez une capture d'écran de vos stats ou collez l'URL de votre vidéo.
+          Importez une capture d'écran de vos statistiques ou collez l'URL de votre vidéo TikTok.
         </p>
       </div>
 
