@@ -102,6 +102,11 @@
     50% { filter: brightness(1.2); }
   }
 
+  @keyframes pulse-gold {
+    0%, 100% { box-shadow: 0 0 20px #FFD700, 0 0 40px rgba(255, 215, 0, 0.4); }
+    50% { box-shadow: 0 0 30px #FFD700, 0 0 60px rgba(255, 215, 0, 0.6), 0 0 100px rgba(255, 215, 0, 0.3); }
+  }
+
   .glow-text-dark {
     text-shadow: 0 0 12px hsla(244, 95%, 57%, 0.5), 0 0 30px hsla(244, 95%, 57%, 0.2);
   }
@@ -155,10 +160,19 @@
     font-size: 0.95rem;
     font-weight: 500;
     color: hsl(0 0% 100%);
-    background: hsl(244 95% 57%);
+    background: hsl(var(--primary));
     border-radius: 12px;
     backface-visibility: hidden;
     white-space: nowrap;
+  }
+
+  .flip-btn-white {
+    height: 52px;
+  }
+
+  .flip-face-white {
+    color: hsl(var(--foreground));
+    background: hsl(0 0% 100%);
   }
 
   .flip-face-front {
