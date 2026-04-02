@@ -162,9 +162,10 @@ export default function FeaturesSection() {
         </div>
 
         {/* Mobile timeline */}
-        <div className="md:hidden relative mx-auto max-w-[480px] pl-14">
+        <div className="md:hidden relative mx-auto max-w-[480px]">
+          {/* Vertical line aligned with circle centers: left offset = 20px (half of w-10) */}
           <svg
-            className="absolute left-[26px] top-0 h-full"
+            className="absolute left-[19px] top-0 h-full"
             width="4"
             viewBox="0 0 4 400"
             preserveAspectRatio="none"
@@ -188,7 +189,7 @@ export default function FeaturesSection() {
                 <div key={i} className="flex items-start gap-4">
                   {step.isTrophy ? (
                     <div
-                      className="w-10 h-10 rounded-full z-10 flex items-center justify-center text-lg flex-shrink-0 -ml-14 transition-all duration-500"
+                      className="w-10 h-10 rounded-full z-10 flex items-center justify-center text-lg flex-shrink-0 transition-all duration-500"
                       style={{
                         background: active ? "#FFD700" : "hsl(var(--background))",
                         border: active ? "none" : "2px solid hsl(var(--border))",
@@ -202,7 +203,7 @@ export default function FeaturesSection() {
                     </div>
                   ) : (
                     <div
-                      className="w-10 h-10 rounded-full z-10 flex items-center justify-center flex-shrink-0 -ml-14 transition-all duration-300"
+                      className="w-10 h-10 rounded-full z-10 flex items-center justify-center flex-shrink-0 transition-all duration-300"
                       style={{
                         borderWidth: "2px",
                         borderStyle: "solid",
@@ -220,7 +221,7 @@ export default function FeaturesSection() {
                       </span>
                     </div>
                   )}
-                  <div>
+                  <div className="pt-1">
                     <h3
                       className="text-sm font-bold transition-colors duration-500"
                       style={{
