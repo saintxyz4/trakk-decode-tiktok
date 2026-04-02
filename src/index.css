@@ -80,6 +80,28 @@
     text-shadow: 0 0 20px hsla(244, 95%, 57%, 0.6), 0 0 40px hsla(244, 95%, 57%, 0.3), 0 0 60px hsla(244, 95%, 57%, 0.15);
   }
 
+  .super-glow {
+    text-shadow:
+      0 0 10px hsla(244, 95%, 75%, 0.9),
+      0 0 20px hsla(244, 95%, 65%, 0.7),
+      0 0 40px hsla(244, 95%, 57%, 0.5),
+      0 0 80px hsla(244, 95%, 57%, 0.35),
+      0 0 120px hsla(244, 95%, 57%, 0.2);
+    animation: glow-pulse 3s ease-in-out infinite;
+  }
+
+  .super-glow-dark {
+    text-shadow:
+      0 0 8px hsla(244, 95%, 57%, 0.8),
+      0 0 20px hsla(244, 95%, 57%, 0.5),
+      0 0 40px hsla(244, 95%, 57%, 0.3);
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% { filter: brightness(1); }
+    50% { filter: brightness(1.2); }
+  }
+
   .glow-text-dark {
     text-shadow: 0 0 12px hsla(244, 95%, 57%, 0.5), 0 0 30px hsla(244, 95%, 57%, 0.2);
   }
@@ -99,8 +121,44 @@
   }
 
   .feature-row:hover .feature-num {
-    color: hsl(244 80% 80%);
-    transform: scale(1.05);
+    color: hsl(244 80% 70%);
+    transform: scale(1.08);
+  }
+
+  /* 3D Cube button */
+  .cube-btn-wrapper {
+    perspective: 600px;
+  }
+
+  .cube-btn {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .cube-btn:hover {
+    transform: rotateX(-90deg);
+  }
+
+  .cube-face {
+    backface-visibility: hidden;
+  }
+
+  .cube-face-front {
+    display: flex;
+  }
+
+  .cube-face-top {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotateX(90deg) translateZ(24px);
+  }
+
+  .cube-btn:hover .cube-face-front {
+    visibility: hidden;
   }
 
   .hero-gradient {
