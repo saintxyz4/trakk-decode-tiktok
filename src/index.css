@@ -87,4 +87,58 @@
   .glass-card {
     @apply bg-card border-thin border-border rounded-xl backdrop-blur-sm;
   }
+
+  @keyframes blob-drift-1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(80px, -60px) scale(1.15); }
+    50% { transform: translate(-40px, 40px) scale(0.9); }
+    75% { transform: translate(60px, 80px) scale(1.1); }
+  }
+
+  @keyframes blob-drift-2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(-60px, 80px) scale(1.1); }
+    50% { transform: translate(80px, -40px) scale(0.85); }
+    75% { transform: translate(-80px, -60px) scale(1.2); }
+  }
+
+  @keyframes blob-drift-3 {
+    0%, 100% { transform: translate(0, 0) scale(1.05); }
+    33% { transform: translate(100px, 60px) scale(0.9); }
+    66% { transform: translate(-60px, -80px) scale(1.15); }
+  }
+
+  .blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.45;
+  }
+
+  .blob-1 {
+    width: 500px;
+    height: 500px;
+    background: hsl(244 95% 57%);
+    top: -10%;
+    left: -5%;
+    animation: blob-drift-1 18s ease-in-out infinite;
+  }
+
+  .blob-2 {
+    width: 400px;
+    height: 400px;
+    background: hsl(233 47% 14%);
+    bottom: -15%;
+    right: -5%;
+    animation: blob-drift-2 22s ease-in-out infinite;
+  }
+
+  .blob-3 {
+    width: 350px;
+    height: 350px;
+    background: hsl(244 80% 45%);
+    top: 30%;
+    right: 20%;
+    animation: blob-drift-3 25s ease-in-out infinite;
+  }
 }
