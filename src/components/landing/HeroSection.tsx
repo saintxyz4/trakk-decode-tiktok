@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
 import AnimatedBlobs from "./AnimatedBlobs";
-import { motion } from "framer-motion";
-import AnimatedBlobs from "./AnimatedBlobs";
 
 export default function HeroSection() {
   return (
