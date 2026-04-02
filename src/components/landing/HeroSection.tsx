@@ -6,39 +6,61 @@ export default function HeroSection() {
   return (
     <section className="relative hero-gradient pt-32 pb-28 overflow-hidden">
       <AnimatedBlobs />
-      <div className="container relative z-10 text-center">
+      <div className="container relative z-10 max-w-3xl mx-auto px-6">
+        {/* Line 1 — left aligned */}
         <motion.p
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="text-4xl md:text-6xl font-bold text-primary-foreground max-w-3xl mx-auto leading-tight"
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-3xl md:text-5xl lg:text-6xl font-bold text-primary-foreground text-left leading-tight"
         >
           L'algorithme TikTok a des secrets.
         </motion.p>
 
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.25, duration: 0.7 }}
-          className="mt-4 md:mt-6 text-4xl md:text-6xl font-bold text-primary-foreground max-w-3xl mx-auto leading-tight"
+        {/* Animated arrow */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4, delay: 0.5 }}
+          className="flex justify-center my-3"
         >
-          <span className="font-accent-light text-4xl md:text-6xl super-glow">Trakk.</span>{" "}
+          <svg
+            width="40"
+            height="60"
+            viewBox="0 0 40 60"
+            fill="none"
+            className="hero-arrow"
+          >
+            <motion.path
+              d="M20 2 C18 20, 22 35, 20 48 M12 40 L20 52 L28 40"
+              stroke="white"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              fill="none"
+              initial={{ pathLength: 0 }}
+              animate={{ pathLength: 1 }}
+              transition={{ duration: 0.8, delay: 0.6, ease: "easeInOut" }}
+            />
+          </svg>
+        </motion.div>
+
+        {/* Line 2 — right aligned */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.9 }}
+          className="text-3xl md:text-5xl lg:text-6xl font-bold text-primary-foreground text-right leading-tight"
+        >
+          <span className="font-accent-light super-glow">Trakk.</span>{" "}
           vous les révèle.
         </motion.p>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.6 }}
-          className="mt-8 text-lg text-primary-foreground/70 max-w-xl mx-auto"
-        >
-          La plateforme d'intelligence artificielle qui décode les performances de vos vidéos TikTok et transforme vos données en stratégies de croissance actionnables.
-        </motion.p>
-
+        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7, duration: 0.6 }}
+          transition={{ delay: 1.2, duration: 0.6 }}
           className="mt-10 flex justify-center"
         >
           <Link to="/signup" className="cta-btn">

@@ -3,21 +3,25 @@ import { motion } from "framer-motion";
 
 const steps = [
   {
+    num: 1,
     title: "Diagnostic intelligent",
     description:
       "Notre IA analyse en profondeur chaque métrique de vos vidéos pour identifier ce qui freine votre portée.",
   },
   {
+    num: 2,
     title: "Inspiration IA",
     description:
       "Soumettez une vidéo virale et recevez un plan d'action sur-mesure pour reproduire le succès.",
   },
   {
+    num: 3,
     title: "Coach TikTok",
     description:
       "Un assistant expert 24/7 qui maîtrise l'algorithme et les stratégies de croissance.",
   },
   {
+    num: 4,
     title: "Percer sur TikTok",
     description:
       "Transformez vos données en stratégies actionnables et accélérez votre audience.",
@@ -35,24 +39,24 @@ export default function FeaturesSection() {
 
     const onScroll = () => {
       const rect = section.getBoundingClientRect();
-      const sectionTop = rect.top + window.scrollY;
-      const sectionHeight = section.offsetHeight;
-      const p = Math.min(
-        Math.max(
-          (window.scrollY - sectionTop + window.innerHeight * 0.6) / (sectionHeight * 0.8),
-          0
-        ),
-        1
-      );
+      const windowH = window.innerHeight;
+      const start = windowH * 0.8;
+      const end = -rect.height + windowH * 0.2;
+      const raw = (start - rect.top) / (start - end);
+      const p = Math.min(Math.max(raw, 0), 1);
       setProgress(p);
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
     onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
-  const pointThresholds = [0.2, 0.45, 0.7, 0.95];
+  const totalPoints = steps.length;
 
   return (
     <section id="features" ref={sectionRef} className="py-24 bg-background">
@@ -77,16 +81,12 @@ export default function FeaturesSection() {
         {/* Desktop timeline */}
         <div className="hidden md:block relative max-w-4xl mx-auto">
           <svg
-            className="absolute top-[10px] left-0 w-full"
+            className="absolute top-[18px] left-0 w-full"
             height="4"
             viewBox="0 0 1000 4"
             preserveAspectRatio="none"
           >
-            <line
-              x1="0" y1="2" x2="1000" y2="2"
-              stroke="hsl(var(--border))"
-              strokeWidth="2"
-            />
+            <line x1="0" y1="2" x2="1000" y2="2" stroke="hsl(var(--border))" strokeWidth="2" />
             <line
               x1="0" y1="2" x2="1000" y2="2"
               stroke="hsl(var(--primary))"
@@ -99,7 +99,8 @@ export default function FeaturesSection() {
 
           <div className="flex justify-between relative">
             {steps.map((step, i) => {
-              const active = progress >= pointThresholds[i];
+              const threshold = (i + 0.5) / totalPoints;
+              const active = progress >= threshold;
               return (
                 <div key={i} className="flex flex-col items-center w-1/4 px-2">
                   {step.isTrophy ? (
@@ -112,32 +113,35 @@ export default function FeaturesSection() {
                           ? "0 0 20px #FFD700, 0 0 40px rgba(255,215,0,0.4), 0 0 80px rgba(255,215,0,0.2)"
                           : "none",
                         animation: active ? "pulse-gold 2s ease-in-out infinite" : "none",
-                        transform: `translateY(-14px)`,
                       }}
                     >
                       🏆
                     </div>
                   ) : (
                     <div
-                      className="w-5 h-5 rounded-full border-2 z-10 transition-all duration-500 flex-shrink-0"
+                      className="w-10 h-10 rounded-full z-10 flex items-center justify-center flex-shrink-0 transition-all duration-300"
                       style={{
+                        borderWidth: "2px",
+                        borderStyle: "solid",
                         borderColor: "hsl(var(--primary))",
                         backgroundColor: active
                           ? "hsl(var(--primary))"
-                          : "hsl(var(--background))",
-                        transform: active ? "scale(1.2)" : "scale(1)",
+                          : "hsla(var(--primary) / 0.15)",
+                        transform: active ? "scale(1.1)" : "scale(1)",
                         boxShadow: active
                           ? "0 0 12px hsla(244, 95%, 57%, 0.5)"
                           : "none",
                       }}
-                    />
+                    >
+                      <span className="text-sm font-semibold text-primary-foreground leading-none">
+                        {step.num}
+                      </span>
+                    </div>
                   )}
                   <h3
                     className="mt-4 text-sm font-bold text-center transition-colors duration-500"
                     style={{
-                      color: active
-                        ? "hsl(var(--foreground))"
-                        : "hsl(var(--muted-foreground))",
+                      color: active ? "hsl(var(--foreground))" : "hsl(var(--muted-foreground))",
                     }}
                   >
                     {step.title}
@@ -158,18 +162,14 @@ export default function FeaturesSection() {
         </div>
 
         {/* Mobile timeline */}
-        <div className="md:hidden relative pl-8 max-w-sm mx-auto">
+        <div className="md:hidden relative mx-auto max-w-[480px] pl-14">
           <svg
-            className="absolute left-[9px] top-0 h-full"
+            className="absolute left-[26px] top-0 h-full"
             width="4"
             viewBox="0 0 4 400"
             preserveAspectRatio="none"
           >
-            <line
-              x1="2" y1="0" x2="2" y2="400"
-              stroke="hsl(var(--border))"
-              strokeWidth="2"
-            />
+            <line x1="2" y1="0" x2="2" y2="400" stroke="hsl(var(--border))" strokeWidth="2" />
             <line
               x1="2" y1="0" x2="2" y2="400"
               stroke="hsl(var(--primary))"
@@ -182,12 +182,13 @@ export default function FeaturesSection() {
 
           <div className="flex flex-col gap-12 relative">
             {steps.map((step, i) => {
-              const active = progress >= pointThresholds[i];
+              const threshold = (i + 0.5) / totalPoints;
+              const active = progress >= threshold;
               return (
                 <div key={i} className="flex items-start gap-4">
                   {step.isTrophy ? (
                     <div
-                      className="w-10 h-10 rounded-full z-10 flex items-center justify-center text-lg flex-shrink-0 -ml-8 transition-all duration-500"
+                      className="w-10 h-10 rounded-full z-10 flex items-center justify-center text-lg flex-shrink-0 -ml-14 transition-all duration-500"
                       style={{
                         background: active ? "#FFD700" : "hsl(var(--background))",
                         border: active ? "none" : "2px solid hsl(var(--border))",
@@ -201,26 +202,29 @@ export default function FeaturesSection() {
                     </div>
                   ) : (
                     <div
-                      className="w-5 h-5 rounded-full border-2 z-10 flex-shrink-0 -ml-8 transition-all duration-500"
+                      className="w-10 h-10 rounded-full z-10 flex items-center justify-center flex-shrink-0 -ml-14 transition-all duration-300"
                       style={{
+                        borderWidth: "2px",
+                        borderStyle: "solid",
                         borderColor: "hsl(var(--primary))",
                         backgroundColor: active
                           ? "hsl(var(--primary))"
-                          : "hsl(var(--background))",
-                        transform: active ? "scale(1.2)" : "scale(1)",
+                          : "hsla(var(--primary) / 0.15)",
                         boxShadow: active
                           ? "0 0 12px hsla(244, 95%, 57%, 0.5)"
                           : "none",
                       }}
-                    />
+                    >
+                      <span className="text-sm font-semibold text-primary-foreground leading-none">
+                        {step.num}
+                      </span>
+                    </div>
                   )}
                   <div>
                     <h3
                       className="text-sm font-bold transition-colors duration-500"
                       style={{
-                        color: active
-                          ? "hsl(var(--foreground))"
-                          : "hsl(var(--muted-foreground))",
+                        color: active ? "hsl(var(--foreground))" : "hsl(var(--muted-foreground))",
                       }}
                     >
                       {step.title}
