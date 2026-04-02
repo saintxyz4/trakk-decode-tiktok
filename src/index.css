@@ -76,6 +76,33 @@
     color: hsl(0, 0%, 100%);
   }
 
+  .glow-text {
+    text-shadow: 0 0 20px hsla(244, 95%, 57%, 0.6), 0 0 40px hsla(244, 95%, 57%, 0.3), 0 0 60px hsla(244, 95%, 57%, 0.15);
+  }
+
+  .glow-text-dark {
+    text-shadow: 0 0 12px hsla(244, 95%, 57%, 0.5), 0 0 30px hsla(244, 95%, 57%, 0.2);
+  }
+
+  .feature-row {
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+
+  .feature-row:hover {
+    transform: translateX(8px);
+    background: hsla(244, 95%, 57%, 0.03);
+  }
+
+  .feature-num {
+    color: hsl(244 60% 90%);
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .feature-row:hover .feature-num {
+    color: hsl(244 80% 80%);
+    transform: scale(1.05);
+  }
+
   .hero-gradient {
     background: var(--hero-gradient);
   }

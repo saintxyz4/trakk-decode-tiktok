@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 
 const quickActions = [
   { to: "/dashboard/diagnostic", icon: Search, title: "Diagnostic vidéo", desc: "Analysez pourquoi votre vidéo ne performe pas" },
-  { to: "/dashboard/inspiration", icon: Zap, title: "Inspiration IA", desc: "Obtenez un plan d'action depuis une vidéo virale" },
-  { to: "/dashboard/chat", icon: MessageSquare, title: "Coach TikTok", desc: "Posez vos questions à un expert IA" },
+  { to: "/dashboard/inspiration", icon: Zap, title: "Reverse-engineering viral", desc: "Obtenez un plan d'action depuis une vidéo virale" },
+  { to: "/dashboard/chat", icon: MessageSquare, title: "Coach IA dédié", desc: "Posez vos questions à un expert de l'algorithme" },
 ];
 
 export default function Dashboard() {
@@ -13,7 +13,7 @@ export default function Dashboard() {
     <div className="space-y-8">
       <div>
         <h1 className="text-2xl font-bold">Tableau de bord</h1>
-        <p className="text-muted-foreground mt-1">Bienvenue sur Trakk. Choisissez un outil pour commencer.</p>
+        <p className="text-muted-foreground mt-1">Bienvenue sur <span className="font-accent glow-text-dark">Trakk.</span> — Choisissez un outil pour commencer.</p>
       </div>
 
       {/* Niche du jour */}
@@ -51,9 +51,9 @@ export default function Dashboard() {
         ))}
       </div>
 
-      {/* Stats */}
+      {/* Statistiques */}
       <div className="glass-card p-6">
-        <h2 className="font-semibold mb-4">Vos analyses</h2>
+        <h2 className="font-semibold mb-4">Vos statistiques</h2>
         <div className="grid grid-cols-3 gap-6 text-center">
           <div>
             <div className="text-3xl font-bold">0</div>

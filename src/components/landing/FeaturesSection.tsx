@@ -3,21 +3,21 @@ import { motion } from "framer-motion";
 const features = [
   {
     num: "01",
-    title: "Diagnostic vidéo",
+    title: "Diagnostic intelligent",
     description:
-      "Uploadez une capture d'écran de vos stats TikTok et obtenez un diagnostic détaillé de ce qui freine votre vidéo.",
+      "Importez une capture d'écran de vos statistiques TikTok et notre IA analyse en profondeur chaque métrique pour identifier précisément ce qui freine la portée de votre contenu.",
   },
   {
     num: "02",
-    title: "Inspiration IA",
+    title: "Reverse-engineering viral",
     description:
-      "Collez l'URL d'une vidéo virale et recevez un plan d'action personnalisé pour reproduire son succès.",
+      "Soumettez l'URL d'une vidéo virale et recevez un plan d'action sur-mesure : structure narrative, hooks, timing de publication — tout ce qu'il faut pour reproduire le succès.",
   },
   {
     num: "03",
-    title: "Coach TikTok",
+    title: "Coach IA dédié",
     description:
-      "Un chatbot expert qui répond à toutes vos questions sur l'algorithme, la stratégie et le contenu.",
+      "Un assistant expert disponible 24/7 qui maîtrise l'algorithme TikTok, les tendances et les stratégies de croissance. Posez vos questions, obtenez des réponses exploitables.",
   },
 ];
 
@@ -37,11 +37,10 @@ export default function FeaturesSection() {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold">
             Trois outils, un seul{" "}
-            <span className="font-accent">objectif</span>
+            <span className="font-accent glow-text-dark">objectif</span>
           </h2>
           <p className="mt-4 text-muted-foreground max-w-lg mx-auto">
-            Comprenez l'algorithme, optimisez votre contenu, et faites décoller
-            votre audience.
+            Décodez l'algorithme, optimisez votre stratégie de contenu et accélérez la croissance de votre audience.
           </p>
         </div>
 
@@ -52,11 +51,11 @@ export default function FeaturesSection() {
               custom={i}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-50px" }}
               variants={fadeUp}
-              className={`relative py-10 ${i < features.length - 1 ? "border-b border-border" : ""}`}
+              className={`feature-row relative py-10 ${i < features.length - 1 ? "border-b border-border" : ""}`}
             >
-              <span className="absolute -left-2 top-6 text-[80px] font-light leading-none text-[hsl(244_60%_90%)] select-none pointer-events-none hidden md:block">
+              <span className="feature-num absolute -left-2 top-6 text-[80px] font-light leading-none select-none pointer-events-none hidden md:block">
                 {f.num}
               </span>
               <div className="md:pl-28">
