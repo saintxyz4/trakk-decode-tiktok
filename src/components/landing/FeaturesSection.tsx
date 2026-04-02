@@ -21,6 +21,7 @@ const steps = [
     title: "Percer sur TikTok",
     description:
       "Transformez vos données en stratégies actionnables et accélérez votre audience.",
+    isTrophy: true,
   },
 ];
 
@@ -32,30 +33,18 @@ export default function FeaturesSection() {
     const section = sectionRef.current;
     if (!section) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            let start: number | null = null;
-            const duration = 1500;
-            const animate = (ts: number) => {
-              if (!start) start = ts;
-              const elapsed = ts - start;
-              const p = Math.min(elapsed / duration, 1);
-              const eased = p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
-              setProgress(eased);
-              if (p < 1) requestAnimationFrame(animate);
-            };
-            requestAnimationFrame(animate);
-            observer.unobserve(section);
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
+    const onScroll = () => {
+      const rect = section.getBoundingClientRect();
+      const p = Math.min(
+        Math.max(-rect.top / (rect.height - window.innerHeight), 0),
+        1
+      );
+      setProgress(p);
+    };
 
-    observer.observe(section);
-    return () => observer.disconnect();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const pointThresholds = [0, 0.33, 0.66, 1];
@@ -108,18 +97,43 @@ export default function FeaturesSection() {
               const active = progress >= pointThresholds[i];
               return (
                 <div key={i} className="flex flex-col items-center w-1/4 px-2">
-                  <div
-                    className="w-5 h-5 rounded-full border-2 z-10 transition-all duration-500 flex-shrink-0"
-                    style={{
-                      borderColor: "hsl(var(--primary))",
-                      backgroundColor: active ? "hsl(var(--primary))" : "hsl(var(--background))",
-                      transform: active ? "scale(1.2)" : "scale(1)",
-                      boxShadow: active ? "0 0 12px hsla(244, 95%, 57%, 0.5)" : "none",
-                    }}
-                  />
+                  {step.isTrophy ? (
+                    <div
+                      className="w-12 h-12 rounded-full z-10 flex items-center justify-center text-xl flex-shrink-0 transition-all duration-500"
+                      style={{
+                        background: active ? "#FFD700" : "hsl(var(--background))",
+                        border: active ? "none" : "2px solid hsl(var(--border))",
+                        boxShadow: active
+                          ? "0 0 20px #FFD700, 0 0 40px rgba(255,215,0,0.4), 0 0 80px rgba(255,215,0,0.2)"
+                          : "none",
+                        animation: active ? "pulse-gold 2s ease-in-out infinite" : "none",
+                        transform: `translateY(-14px)`,
+                      }}
+                    >
+                      🏆
+                    </div>
+                  ) : (
+                    <div
+                      className="w-5 h-5 rounded-full border-2 z-10 transition-all duration-500 flex-shrink-0"
+                      style={{
+                        borderColor: "hsl(var(--primary))",
+                        backgroundColor: active
+                          ? "hsl(var(--primary))"
+                          : "hsl(var(--background))",
+                        transform: active ? "scale(1.2)" : "scale(1)",
+                        boxShadow: active
+                          ? "0 0 12px hsla(244, 95%, 57%, 0.5)"
+                          : "none",
+                      }}
+                    />
+                  )}
                   <h3
                     className="mt-4 text-sm font-bold text-center transition-colors duration-500"
-                    style={{ color: active ? "hsl(var(--foreground))" : "hsl(var(--muted-foreground))" }}
+                    style={{
+                      color: active
+                        ? "hsl(var(--foreground))"
+                        : "hsl(var(--muted-foreground))",
+                    }}
                   >
                     {step.title}
                   </h3>
@@ -166,19 +180,43 @@ export default function FeaturesSection() {
               const active = progress >= pointThresholds[i];
               return (
                 <div key={i} className="flex items-start gap-4">
-                  <div
-                    className="w-5 h-5 rounded-full border-2 z-10 flex-shrink-0 -ml-8 transition-all duration-500"
-                    style={{
-                      borderColor: "hsl(var(--primary))",
-                      backgroundColor: active ? "hsl(var(--primary))" : "hsl(var(--background))",
-                      transform: active ? "scale(1.2)" : "scale(1)",
-                      boxShadow: active ? "0 0 12px hsla(244, 95%, 57%, 0.5)" : "none",
-                    }}
-                  />
+                  {step.isTrophy ? (
+                    <div
+                      className="w-10 h-10 rounded-full z-10 flex items-center justify-center text-lg flex-shrink-0 -ml-8 transition-all duration-500"
+                      style={{
+                        background: active ? "#FFD700" : "hsl(var(--background))",
+                        border: active ? "none" : "2px solid hsl(var(--border))",
+                        boxShadow: active
+                          ? "0 0 20px #FFD700, 0 0 40px rgba(255,215,0,0.4)"
+                          : "none",
+                        animation: active ? "pulse-gold 2s ease-in-out infinite" : "none",
+                      }}
+                    >
+                      🏆
+                    </div>
+                  ) : (
+                    <div
+                      className="w-5 h-5 rounded-full border-2 z-10 flex-shrink-0 -ml-8 transition-all duration-500"
+                      style={{
+                        borderColor: "hsl(var(--primary))",
+                        backgroundColor: active
+                          ? "hsl(var(--primary))"
+                          : "hsl(var(--background))",
+                        transform: active ? "scale(1.2)" : "scale(1)",
+                        boxShadow: active
+                          ? "0 0 12px hsla(244, 95%, 57%, 0.5)"
+                          : "none",
+                      }}
+                    />
+                  )}
                   <div>
                     <h3
                       className="text-sm font-bold transition-colors duration-500"
-                      style={{ color: active ? "hsl(var(--foreground))" : "hsl(var(--muted-foreground))" }}
+                      style={{
+                        color: active
+                          ? "hsl(var(--foreground))"
+                          : "hsl(var(--muted-foreground))",
+                      }}
                     >
                       {step.title}
                     </h3>

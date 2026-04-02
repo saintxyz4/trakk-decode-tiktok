@@ -44,11 +44,11 @@ export default function HeroSection() {
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Link to="/signup" className="flip-btn-wrapper">
-            <div className="flip-btn">
-              <span className="flip-face flip-face-front">
+            <div className="flip-btn flip-btn-white">
+              <span className="flip-face flip-face-front flip-face-white">
                 Commencer l'analyse gratuite <ArrowRight className="h-4 w-4 inline-block ml-1" />
               </span>
-              <span className="flip-face flip-face-back">
+              <span className="flip-face flip-face-back flip-face-white">
                 C'est parti <ArrowRight className="h-4 w-4 inline-block ml-1" />
               </span>
             </div>

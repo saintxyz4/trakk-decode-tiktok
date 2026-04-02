@@ -155,10 +155,19 @@
     font-size: 0.95rem;
     font-weight: 500;
     color: hsl(0 0% 100%);
-    background: hsl(244 95% 57%);
+    background: hsl(var(--primary));
     border-radius: 12px;
     backface-visibility: hidden;
     white-space: nowrap;
+  }
+
+  .flip-btn-white {
+    height: 52px;
+  }
+
+  .flip-face-white {
+    color: hsl(var(--foreground));
+    background: hsl(0 0% 100%);
   }
 
   .flip-face-front {
