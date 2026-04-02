@@ -1,6 +1,3 @@
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import AnimatedBlobs from "./AnimatedBlobs";
 
@@ -37,23 +34,6 @@ export default function HeroSection() {
           La plateforme d'intelligence artificielle qui décode les performances de vos vidéos TikTok et transforme vos données en stratégies de croissance actionnables.
         </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7, duration: 0.5 }}
-          className="mt-10 flex items-center justify-center"
-        >
-          <Link to="/signup" className="flip-btn-wrapper">
-            <div className="flip-btn flip-btn-white">
-              <span className="flip-face flip-face-front flip-face-white">
-                Commencer l'analyse gratuite <ArrowRight className="h-4 w-4 inline-block ml-1" />
-              </span>
-              <span className="flip-face flip-face-back flip-face-white">
-                Commencer l'analyse gratuite <ArrowRight className="h-4 w-4 inline-block ml-1" />
-              </span>
-            </div>
-          </Link>
-        </motion.div>
       </div>
     </section>
   );
