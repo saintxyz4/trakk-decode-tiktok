@@ -4,6 +4,9 @@ export default function AnimatedBlobs() {
       <div className="blob blob-1" />
       <div className="blob blob-2" />
       <div className="blob blob-3" />
+      <div className="firefly firefly-1" />
+      <div className="firefly firefly-2" />
+      <div className="firefly firefly-3" />
     </div>
   );
 }
