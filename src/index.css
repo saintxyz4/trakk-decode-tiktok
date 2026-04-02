@@ -125,40 +125,48 @@
     transform: scale(1.08);
   }
 
-  /* 3D Cube button */
-  .cube-btn-wrapper {
+  /* 3D Flip button */
+  .flip-btn-wrapper {
     perspective: 600px;
+    display: inline-block;
+    text-decoration: none;
   }
 
-  .cube-btn {
+  .flip-btn {
     position: relative;
+    width: 100%;
+    height: 48px;
     transform-style: preserve-3d;
-    transition: transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.35s ease;
+    border-radius: 12px;
   }
 
-  .cube-btn:hover {
+  .flip-btn-wrapper:hover .flip-btn {
     transform: rotateX(-90deg);
   }
 
-  .cube-face {
-    backface-visibility: hidden;
-  }
-
-  .cube-face-front {
-    display: flex;
-  }
-
-  .cube-face-top {
+  .flip-face {
     position: absolute;
     inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: rotateX(90deg) translateZ(24px);
+    padding: 0 2rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: hsl(0 0% 100%);
+    background: hsl(244 95% 57%);
+    border-radius: 12px;
+    backface-visibility: hidden;
+    white-space: nowrap;
   }
 
-  .cube-btn:hover .cube-face-front {
-    visibility: hidden;
+  .flip-face-front {
+    transform: translateZ(24px);
+  }
+
+  .flip-face-back {
+    transform: rotateX(90deg) translateZ(24px);
   }
 
   .hero-gradient {
