@@ -175,22 +175,30 @@ export default function FeaturesSection() {
 
         {/* Mobile timeline */}
         <div className="md:hidden relative mx-auto max-w-[480px]">
-          {/* Vertical line aligned with circle centers: left offset = 20px (half of w-10) */}
+          {/* Vertical line: starts at center of first icon (20px from left, 20px from top) */}
+          {/* ends at center of last icon. Icons are w-10 h-10, gap-12 (48px) between items */}
           <svg
-            className="absolute left-[19px] top-0 h-full"
+            className="absolute left-[19px]"
             width="4"
+            style={{ top: '20px', bottom: '20px', height: 'calc(100% - 40px)' }}
             viewBox="0 0 4 400"
             preserveAspectRatio="none"
           >
             <line x1="2" y1="0" x2="2" y2="400" stroke="hsl(var(--border))" strokeWidth="2" />
             <line
               x1="2" y1="0" x2="2" y2="400"
-              stroke="hsl(var(--primary))"
+              stroke="url(#timeline-grad-v)"
               strokeWidth="2"
               strokeDasharray="400"
               strokeDashoffset={400 - progress * 400}
               style={{ transition: "stroke-dashoffset 0.05s linear" }}
             />
+            <defs>
+              <linearGradient id="timeline-grad-v" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="hsl(244, 95%, 57%)" />
+                <stop offset="100%" stopColor="hsl(244, 95%, 75%)" />
+              </linearGradient>
+            </defs>
           </svg>
 
           <div className="flex flex-col gap-12 relative">

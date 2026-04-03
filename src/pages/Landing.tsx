@@ -30,39 +30,42 @@ export default function Landing() {
               Trakk<span className="font-accent text-lg super-glow-dark">.</span>
             </Link>
           </motion.div>
-          <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-            {navItems.map((item, i) => (
-              <motion.a
-                key={item.href}
-                href={item.href}
-                className="hover:text-foreground transition-colors"
+          <div className="flex items-center gap-6">
+            <div className="hidden md:flex items-center gap-6 text-sm text-muted-foreground">
+              {navItems.map((item, i) => (
+                <motion.a
+                  key={item.href}
+                  href={item.href}
+                  className="hover:text-foreground transition-colors"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.15 + i * 0.05 }}
+                >
+                  {item.label}
+                </motion.a>
+              ))}
+            </div>
+            <div className="hidden md:block w-px h-5 bg-border" />
+            <div className="flex items-center gap-3">
+              <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.15 + i * 0.05 }}
+                transition={{ duration: 0.4, delay: 0.25 }}
               >
-                {item.label}
-              </motion.a>
-            ))}
-          </div>
-          <div className="flex items-center gap-3">
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.25 }}
-            >
-              <Button variant="ghost" size="sm" asChild>
-                <Link to="/login">Connexion</Link>
-              </Button>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.3 }}
-            >
-              <Button size="sm" asChild>
-                <Link to="/signup">S'inscrire</Link>
-              </Button>
-            </motion.div>
+                <Button variant="ghost" size="sm" asChild>
+                  <Link to="/login">Connexion</Link>
+                </Button>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.3 }}
+              >
+                <Button size="sm" asChild>
+                  <Link to="/signup">S'inscrire</Link>
+                </Button>
+              </motion.div>
+            </div>
           </div>
         </div>
       </motion.nav>
