@@ -82,21 +82,31 @@ export default function FeaturesSection() {
 
         {/* Desktop timeline */}
         <div className="hidden md:block relative max-w-4xl mx-auto">
+          {/* Line spans from center of first icon to center of last icon */}
+          {/* Each icon is w-10 (40px) or w-12 (48px for trophy). Icons are in w-1/4 columns. */}
+          {/* Center of first column = 12.5%, center of last column = 87.5% */}
           <svg
-            className="absolute top-[18px] left-0 w-full"
+            className="absolute top-[18px] w-full"
             height="4"
+            style={{ left: '12.5%', width: '75%' }}
             viewBox="0 0 1000 4"
             preserveAspectRatio="none"
           >
             <line x1="0" y1="2" x2="1000" y2="2" stroke="hsl(var(--border))" strokeWidth="2" />
             <line
               x1="0" y1="2" x2="1000" y2="2"
-              stroke="hsl(var(--primary))"
+              stroke="url(#timeline-grad-h)"
               strokeWidth="2"
               strokeDasharray="1000"
               strokeDashoffset={1000 - progress * 1000}
               style={{ transition: "stroke-dashoffset 0.05s linear" }}
             />
+            <defs>
+              <linearGradient id="timeline-grad-h" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="hsl(244, 95%, 57%)" />
+                <stop offset="100%" stopColor="hsl(244, 95%, 75%)" />
+              </linearGradient>
+            </defs>
           </svg>
 
           <div className="flex justify-between relative">
