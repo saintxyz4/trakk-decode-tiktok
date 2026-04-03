@@ -1,24 +1,14 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import AnimatedBlobs from "./AnimatedBlobs";
-import trakkGraph from "@/assets/trakk-graph.png";
 
 export default function HeroSection() {
   return (
     <section className="relative hero-gradient pt-32 pb-28 overflow-hidden">
       <AnimatedBlobs />
 
-      {/* Background graph with electricity animation */}
+      {/* Electricity curve animation */}
       <div className="absolute inset-0 flex items-center justify-center z-[1] pointer-events-none">
-        <motion.img
-          src={trakkGraph}
-          alt=""
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.15, scale: 1 }}
-          transition={{ duration: 1.2, delay: 0.3 }}
-          className="w-[500px] md:w-[650px] lg:w-[750px] h-auto"
-        />
-        {/* Electricity pulse overlay */}
         <svg
           className="absolute w-[500px] md:w-[650px] lg:w-[750px] h-[500px] md:h-[650px] lg:h-[750px]"
           viewBox="0 0 1024 1024"
@@ -33,67 +23,68 @@ export default function HeroSection() {
             </linearGradient>
           </defs>
           {/* Main path tracing the graph shape */}
+          {/* Main thick path */}
           <motion.path
             d="M200,780 L380,620 L460,700 L620,380 L720,300"
             stroke="url(#elec-grad)"
-            strokeWidth="6"
+            strokeWidth="10"
             strokeLinecap="round"
             strokeLinejoin="round"
             fill="none"
             initial={{ pathLength: 0 }}
             animate={{ pathLength: [0, 1, 0] }}
             transition={{
-              duration: 2.5,
+              duration: 1.6,
               repeat: Infinity,
               ease: "easeInOut",
-              repeatDelay: 0.5,
+              repeatDelay: 0.3,
             }}
           />
           {/* Glow layer */}
           <motion.path
             d="M200,780 L380,620 L460,700 L620,380 L720,300"
             stroke="hsl(244, 95%, 75%)"
-            strokeWidth="14"
+            strokeWidth="22"
             strokeLinecap="round"
             strokeLinejoin="round"
             fill="none"
-            filter="blur(8px)"
-            opacity={0.4}
+            filter="blur(10px)"
+            opacity={0.45}
             initial={{ pathLength: 0 }}
             animate={{ pathLength: [0, 1, 0] }}
             transition={{
-              duration: 2.5,
+              duration: 1.6,
               repeat: Infinity,
               ease: "easeInOut",
-              repeatDelay: 0.5,
+              repeatDelay: 0.3,
             }}
           />
-          {/* Dot at the tip */}
+          {/* Dot at the tip — synced with path */}
           <motion.circle
             cx="720"
             cy="300"
-            r="12"
+            r="14"
             fill="hsl(244, 95%, 75%)"
             initial={{ opacity: 0 }}
             animate={{ opacity: [0, 0, 1, 1, 0] }}
             transition={{
-              duration: 3,
+              duration: 1.9,
               repeat: Infinity,
-              times: [0, 0.6, 0.7, 0.9, 1],
+              times: [0, 0.42, 0.5, 0.84, 1],
             }}
           />
           <motion.circle
             cx="720"
             cy="300"
-            r="24"
+            r="28"
             fill="hsl(244, 95%, 75%)"
-            filter="blur(12px)"
+            filter="blur(14px)"
             initial={{ opacity: 0 }}
             animate={{ opacity: [0, 0, 0.6, 0.6, 0] }}
             transition={{
-              duration: 3,
+              duration: 1.9,
               repeat: Infinity,
-              times: [0, 0.6, 0.7, 0.9, 1],
+              times: [0, 0.42, 0.5, 0.84, 1],
             }}
           />
         </svg>
