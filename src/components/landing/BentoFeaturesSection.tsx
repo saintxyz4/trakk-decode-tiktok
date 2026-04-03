@@ -234,10 +234,10 @@ function BlockC() {
 
 /* ─── BLOCK D — Comparison ─── */
 const comparisons = [
-  ["Vous postez et espérez", "Vous analysez avant de publier"],
-  ["Statistiques TikTok floues", "Score clair sur 100"],
-  ["Vous copiez des trends", "Vous les anticipez"],
-  ["0 feedback actionnable", "1 recommandation concrète par vidéo"],
+  { left: "Vous postez et espérez", right: "Vous analysez avant de publier", leftIcon: "😐", rightIcon: "🎯" },
+  { left: "Statistiques TikTok floues", right: "Score clair sur 100", leftIcon: "🌫️", rightIcon: "📊" },
+  { left: "Vous copiez des trends", right: "Vous les anticipez", leftIcon: "🐌", rightIcon: "⚡" },
+  { left: "0 feedback actionnable", right: "1 recommandation concrète par vidéo", leftIcon: "❌", rightIcon: "💡" },
 ];
 
 function BlockD() {
@@ -251,15 +251,31 @@ function BlockD() {
     >
       <div className="grid grid-cols-[1fr_auto_1fr] gap-x-6 md:gap-x-10 text-sm">
         {/* Headers */}
-        <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground pb-4">Sans Trakk<span className="font-accent">.</span></span>
+        <span
+          className="text-xs font-semibold uppercase tracking-wider pb-4"
+          style={{ color: "hsl(0 70% 55%)", textShadow: "0 0 12px hsla(0, 70%, 55%, 0.4)" }}
+        >
+          Sans Trakk<span className="font-accent">.</span>
+        </span>
         <div />
-        <span className="text-xs font-semibold uppercase tracking-wider pb-4" style={{ color: "hsl(var(--primary))" }}>Avec Trakk<span className="font-accent">.</span></span>
+        <span
+          className="text-xs font-semibold uppercase tracking-wider pb-4"
+          style={{ color: "hsl(142 70% 55%)", textShadow: "0 0 12px hsla(142, 70%, 55%, 0.4)" }}
+        >
+          Avec Trakk<span className="font-accent">.</span>
+        </span>
 
-        {comparisons.map(([left, right], i) => (
+        {comparisons.map((row, i) => (
           <div key={i} className="contents">
-            <span className="text-muted-foreground py-2.5">{left}</span>
+            <span className="text-muted-foreground py-2.5 flex items-center gap-2">
+              <span className="text-base">{row.leftIcon}</span>
+              {row.left}
+            </span>
             <div className="w-px self-stretch" style={{ backgroundColor: "hsl(var(--border))" }} />
-            <span className="text-foreground font-medium py-2.5">{right}</span>
+            <span className="text-foreground font-medium py-2.5 flex items-center gap-2">
+              <span className="text-base">{row.rightIcon}</span>
+              {row.right}
+            </span>
           </div>
         ))}
       </div>
