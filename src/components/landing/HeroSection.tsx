@@ -84,7 +84,8 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
           className="text-3xl md:text-5xl lg:text-6xl font-bold text-primary-foreground text-center leading-tight"
         >
-          Vos vidéos TikTok méritent mieux que des stats floues
+          Vos vidéos TikTok méritent mieux que des stats{" "}
+          <span style={{ filter: "blur(1.5px)", WebkitFilter: "blur(1.5px)" }} className="inline-block">floues</span>
         </motion.p>
 
         {/* Subheadline */}
