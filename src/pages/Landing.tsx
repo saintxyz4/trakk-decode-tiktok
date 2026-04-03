@@ -71,17 +71,19 @@ export default function Landing() {
 
       {/* Smooth gradient transition hero → features */}
       <div
-        className="h-64"
+        className="h-72"
         style={{
           background: `linear-gradient(to bottom,
             hsl(240, 60%, 25%) 0%,
-            hsla(240, 55%, 28%, 0.95) 10%,
-            hsla(240, 45%, 32%, 0.85) 20%,
-            hsla(240, 35%, 40%, 0.65) 35%,
-            hsla(240, 20%, 55%, 0.45) 48%,
-            hsla(240, 12%, 70%, 0.30) 58%,
-            hsla(40, 7%, 85%, 0.15) 70%,
-            hsla(40, 7%, 92%, 0.08) 82%,
+            hsla(240, 58%, 26%, 0.97) 8%,
+            hsla(240, 52%, 28%, 0.90) 16%,
+            hsla(240, 45%, 32%, 0.78) 26%,
+            hsla(240, 35%, 38%, 0.62) 36%,
+            hsla(240, 25%, 48%, 0.45) 46%,
+            hsla(240, 15%, 60%, 0.30) 56%,
+            hsla(40, 8%, 75%, 0.18) 66%,
+            hsla(40, 7%, 85%, 0.10) 76%,
+            hsla(40, 7%, 92%, 0.04) 86%,
             hsl(40, 7%, 96%) 100%
           )`,
         }}
