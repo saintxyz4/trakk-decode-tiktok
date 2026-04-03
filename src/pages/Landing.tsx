@@ -12,7 +12,7 @@ const navItems = [
 
 export default function Landing() {
   return (
-    <div className="min-h-screen bg-background scroll-smooth">
+    <div className="min-h-screen bg-background" style={{ scrollBehavior: "smooth" }}>
       {/* Nav */}
       <motion.nav
         initial={{ y: -20, opacity: 0 }}
@@ -71,36 +71,46 @@ export default function Landing() {
 
       {/* Smooth gradient transition hero → features */}
       <div
-        className="h-40"
+        className="h-64"
         style={{
-          background: "linear-gradient(to bottom, hsl(240, 60%, 25%) 0%, hsl(240, 30%, 40%) 25%, hsl(240, 15%, 60%) 50%, hsl(40, 7%, 92%) 80%, hsl(40, 7%, 96%) 100%)",
+          background: `linear-gradient(to bottom,
+            hsl(240, 60%, 25%) 0%,
+            hsla(240, 55%, 28%, 0.95) 10%,
+            hsla(240, 45%, 32%, 0.85) 20%,
+            hsla(240, 35%, 40%, 0.65) 35%,
+            hsla(240, 20%, 55%, 0.45) 48%,
+            hsla(240, 12%, 70%, 0.30) 58%,
+            hsla(40, 7%, 85%, 0.15) 70%,
+            hsla(40, 7%, 92%, 0.08) 82%,
+            hsl(40, 7%, 96%) 100%
+          )`,
         }}
       />
 
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-50px" }}
-        transition={{ duration: 0.5 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
       >
         <FeaturesSection />
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-50px" }}
-        transition={{ duration: 0.5 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
       >
         <PricingSection />
       </motion.div>
 
       {/* Footer */}
       <motion.footer
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.6 }}
         className="py-12 border-t border-thin border-border"
       >
         <div className="container text-center text-sm text-muted-foreground">
