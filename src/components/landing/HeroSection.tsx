@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import AnimatedBlobs from "./AnimatedBlobs";
-import trakkGraph from "@/assets/trakk-graph.png";
 
 export default function HeroSection() {
   return (
