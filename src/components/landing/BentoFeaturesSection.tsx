@@ -247,10 +247,47 @@ function BlockD() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="max-w-2xl mx-auto"
+      className="max-w-2xl mx-auto px-4"
     >
-      <div className="grid grid-cols-[1fr_auto_1fr] gap-x-6 md:gap-x-10 text-sm">
-        {/* Headers */}
+      {/* Mobile: stacked cards */}
+      <div className="md:hidden space-y-6">
+        <div>
+          <span
+            className="text-xs font-semibold uppercase tracking-wider block mb-3"
+            style={{ color: "hsl(0 70% 55%)", textShadow: "0 0 12px hsla(0, 70%, 55%, 0.4)" }}
+          >
+            Sans Trakk<span className="font-accent">.</span>
+          </span>
+          <div className="space-y-3">
+            {comparisons.map((row, i) => (
+              <div key={i} className="flex items-start gap-2.5 text-sm text-muted-foreground">
+                <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-1.5" style={{ backgroundColor: "hsl(0 70% 55%)" }} />
+                {row.left}
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="h-px" style={{ backgroundColor: "hsl(var(--border))" }} />
+        <div>
+          <span
+            className="text-xs font-semibold uppercase tracking-wider block mb-3"
+            style={{ color: "hsl(142 70% 55%)", textShadow: "0 0 12px hsla(142, 70%, 55%, 0.4)" }}
+          >
+            Avec Trakk<span className="font-accent">.</span>
+          </span>
+          <div className="space-y-3">
+            {comparisons.map((row, i) => (
+              <div key={i} className="flex items-start gap-2.5 text-sm text-foreground font-medium">
+                <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-1.5" style={{ backgroundColor: "hsl(142 70% 55%)" }} />
+                {row.right}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop: side-by-side grid */}
+      <div className="hidden md:grid grid-cols-[1fr_auto_1fr] gap-x-10 text-sm">
         <span
           className="text-xs font-semibold uppercase tracking-wider pb-4"
           style={{ color: "hsl(0 70% 55%)", textShadow: "0 0 12px hsla(0, 70%, 55%, 0.4)" }}
