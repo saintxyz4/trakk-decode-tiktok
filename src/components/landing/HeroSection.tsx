@@ -8,17 +8,8 @@ export default function HeroSection() {
     <section className="relative hero-gradient pt-32 pb-28 overflow-hidden">
       <AnimatedBlobs />
 
-      {/* Background graph with electricity animation */}
+      {/* Electricity curve animation */}
       <div className="absolute inset-0 flex items-center justify-center z-[1] pointer-events-none">
-        <motion.img
-          src={trakkGraph}
-          alt=""
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.15, scale: 1 }}
-          transition={{ duration: 1.2, delay: 0.3 }}
-          className="w-[500px] md:w-[650px] lg:w-[750px] h-auto"
-        />
-        {/* Electricity pulse overlay */}
         <svg
           className="absolute w-[500px] md:w-[650px] lg:w-[750px] h-[500px] md:h-[650px] lg:h-[750px]"
           viewBox="0 0 1024 1024"
