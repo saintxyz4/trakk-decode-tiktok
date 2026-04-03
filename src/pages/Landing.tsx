@@ -3,7 +3,11 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import HeroSection from "@/components/landing/HeroSection";
 import FeaturesSection from "@/components/landing/FeaturesSection";
+import StatsSection from "@/components/landing/StatsSection";
+import DemoSection from "@/components/landing/DemoSection";
+import TestimonialsSection from "@/components/landing/TestimonialsSection";
 import PricingSection from "@/components/landing/PricingSection";
+import FAQSection from "@/components/landing/FAQSection";
 
 const navItems = [
   { label: "Fonctionnalités", href: "#features" },
@@ -107,7 +111,43 @@ export default function Landing() {
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
       >
+        <StatsSection />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        <DemoSection />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        <TestimonialsSection />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+      >
         <PricingSection />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        <FAQSection />
       </motion.div>
 
       {/* Footer */}
