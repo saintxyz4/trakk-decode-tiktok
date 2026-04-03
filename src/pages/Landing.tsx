@@ -3,7 +3,11 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import HeroSection from "@/components/landing/HeroSection";
 import FeaturesSection from "@/components/landing/FeaturesSection";
+import StatsSection from "@/components/landing/StatsSection";
+import DemoSection from "@/components/landing/DemoSection";
+import TestimonialsSection from "@/components/landing/TestimonialsSection";
 import PricingSection from "@/components/landing/PricingSection";
+import FAQSection from "@/components/landing/FAQSection";
 
 const navItems = [
   { label: "Fonctionnalités", href: "#features" },
