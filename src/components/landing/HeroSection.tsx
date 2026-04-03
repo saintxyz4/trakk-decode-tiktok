@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import AnimatedBlobs from "./AnimatedBlobs";
 
 export default function HeroSection() {
+  const [url, setUrl] = useState("");
+
   return (
     <section className="relative hero-gradient pt-32 pb-28 overflow-hidden">
       <AnimatedBlobs />
@@ -36,12 +39,7 @@ export default function HeroSection() {
             fill="none"
             initial={{ pathLength: 0 }}
             animate={{ pathLength: [0, 1, 0] }}
-            transition={{
-              duration: 3.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-              repeatDelay: 0.8,
-            }}
+            transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", repeatDelay: 0.8 }}
           />
           <motion.path
             d="M200,780 L380,620 L460,700 L620,380 L720,300"
@@ -54,17 +52,12 @@ export default function HeroSection() {
             opacity={0.45}
             initial={{ pathLength: 0 }}
             animate={{ pathLength: [0, 1, 0] }}
-            transition={{
-              duration: 3.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-              repeatDelay: 0.8,
-            }}
+            transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", repeatDelay: 0.8 }}
           />
         </svg>
       </motion.div>
 
-      {/* Bottom fade overlay for seamless transition */}
+      {/* Bottom fade overlay */}
       <div
         className="absolute bottom-0 left-0 right-0 z-[2] pointer-events-none"
         style={{
@@ -84,40 +77,73 @@ export default function HeroSection() {
       />
 
       <div className="container relative z-10 max-w-3xl mx-auto px-6">
-        {/* Line 1 — staggered word entrance */}
+        {/* Headline */}
         <motion.p
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
           className="text-3xl md:text-5xl lg:text-6xl font-bold text-primary-foreground text-center leading-tight"
         >
-          L'algorithme TikTok a des secrets.
+          Comprends pourquoi tes vidéos TikTok performent —{" "}
+          <span className="font-accent-light super-glow">ou pas.</span>
         </motion.p>
 
-        {/* Spacer */}
-        <div className="h-10 md:h-16" />
-
-        {/* Line 2 */}
+        {/* Subheadline */}
         <motion.p
-          initial={{ opacity: 0, y: 60 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
-          className="text-3xl md:text-5xl lg:text-6xl font-bold text-primary-foreground text-center leading-tight"
+          transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+          className="mt-6 text-base md:text-lg text-primary-foreground/70 text-center max-w-xl mx-auto leading-relaxed"
         >
           <span className="font-accent-light super-glow">Trakk.</span>{" "}
-          vous les révèle.
+          analyse chaque vidéo en profondeur et te donne des recommandations concrètes pour scaler ton audience.
         </motion.p>
 
-        {/* CTA — spring entrance */}
+        {/* URL Input — the most important element */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9, y: 30 }}
+          initial={{ opacity: 0, scale: 0.95, y: 30 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ delay: 1.4, type: "spring", stiffness: 200, damping: 20 }}
-          className="mt-10 flex justify-center"
+          transition={{ delay: 1, type: "spring", stiffness: 200, damping: 20 }}
+          className="mt-10 max-w-2xl mx-auto"
         >
-          <Link to="/signup" className="cta-btn">
-            Commencer l'analyse gratuite
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-3 p-2 rounded-2xl"
+            style={{
+              background: 'rgba(255,255,255,0.08)',
+              border: '1px solid rgba(255,255,255,0.15)',
+              backdropFilter: 'blur(12px)',
+            }}
+          >
+            <input
+              type="url"
+              value={url}
+              onChange={(e) => setUrl(e.target.value)}
+              placeholder="https://www.tiktok.com/@..."
+              className="flex-1 bg-transparent text-primary-foreground placeholder:text-primary-foreground/40 px-5 py-4 text-base outline-none rounded-xl"
+            />
+            <Link
+              to="/signup"
+              className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-medium text-sm whitespace-nowrap transition-all duration-200"
+              style={{
+                background: 'hsl(244, 95%, 57%)',
+                color: '#fff',
+                boxShadow: '0 0 20px hsla(244, 95%, 57%, 0.4)',
+              }}
+            >
+              Analyser gratuitement →
+            </Link>
+          </div>
+
+          {/* Reassurance */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.4, duration: 0.6 }}
+            className="mt-4 text-center text-xs text-primary-foreground/50 flex items-center justify-center gap-4 flex-wrap"
+          >
+            <span>✓ Gratuit</span>
+            <span>✓ Sans compte</span>
+            <span>✓ En moins de 10 secondes</span>
+          </motion.p>
         </motion.div>
       </div>
     </section>
