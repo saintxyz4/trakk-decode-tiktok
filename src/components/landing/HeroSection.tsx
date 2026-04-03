@@ -23,7 +23,6 @@ export default function HeroSection() {
             </linearGradient>
           </defs>
           {/* Main path tracing the graph shape */}
-          {/* Main thick path */}
           <motion.path
             d="M200,780 L380,620 L460,700 L620,380 L720,300"
             stroke="url(#elec-grad)"
@@ -34,10 +33,10 @@ export default function HeroSection() {
             initial={{ pathLength: 0 }}
             animate={{ pathLength: [0, 1, 0] }}
             transition={{
-              duration: 1.6,
+              duration: 3.5,
               repeat: Infinity,
               ease: "easeInOut",
-              repeatDelay: 0.3,
+              repeatDelay: 0.8,
             }}
           />
           {/* Glow layer */}
@@ -53,38 +52,10 @@ export default function HeroSection() {
             initial={{ pathLength: 0 }}
             animate={{ pathLength: [0, 1, 0] }}
             transition={{
-              duration: 1.6,
+              duration: 3.5,
               repeat: Infinity,
               ease: "easeInOut",
-              repeatDelay: 0.3,
-            }}
-          />
-          {/* Dot at the tip — synced with path */}
-          <motion.circle
-            cx="720"
-            cy="300"
-            r="14"
-            fill="hsl(244, 95%, 75%)"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: [0, 0, 1, 1, 0] }}
-            transition={{
-              duration: 1.9,
-              repeat: Infinity,
-              times: [0, 0.42, 0.5, 0.84, 1],
-            }}
-          />
-          <motion.circle
-            cx="720"
-            cy="300"
-            r="28"
-            fill="hsl(244, 95%, 75%)"
-            filter="blur(14px)"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: [0, 0, 0.6, 0.6, 0] }}
-            transition={{
-              duration: 1.9,
-              repeat: Infinity,
-              times: [0, 0.42, 0.5, 0.84, 1],
+              repeatDelay: 0.8,
             }}
           />
         </svg>

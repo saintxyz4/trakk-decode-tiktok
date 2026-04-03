@@ -37,23 +37,25 @@ export default function FeaturesSection() {
     const section = sectionRef.current;
     if (!section) return;
 
+    let ticking = false;
     const onScroll = () => {
-      const rect = section.getBoundingClientRect();
-      const windowH = window.innerHeight;
-      const start = windowH * 0.8;
-      const end = -rect.height + windowH * 0.2;
-      const raw = (start - rect.top) / (start - end);
-      const p = Math.min(Math.max(raw, 0), 1);
-      setProgress(p);
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const rect = section.getBoundingClientRect();
+        const windowH = window.innerHeight;
+        // Line starts drawing when section top enters viewport
+        const start = windowH;
+        const end = -rect.height * 0.3;
+        const raw = (start - rect.top) / (start - end);
+        setProgress(Math.min(Math.max(raw, 0), 1));
+        ticking = false;
+      });
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
     onScroll();
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
-    };
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const totalPoints = steps.length;
