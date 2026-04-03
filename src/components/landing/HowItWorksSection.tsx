@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
+import { Link2, Zap, FileText } from "lucide-react";
 
 const steps = [
-  { icon: "🔗", title: "Colle ton lien TikTok", description: "Copie l'URL de ta vidéo et colle-la dans l'outil." },
-  { icon: "🤖", title: "L'IA analyse tes métriques", description: "Notre algorithme scanne engagement, rétention, hooks et tendances." },
-  { icon: "📊", title: "Reçois ton rapport en secondes", description: "Un diagnostic complet avec des recommandations actionnables." },
+  { icon: Link2, title: "Colle ton lien TikTok", description: "Copie l'URL de ta vidéo et colle-la dans l'outil." },
+  { icon: Zap, title: "L'IA analyse tes métriques", description: "Notre algorithme scanne engagement, rétention, hooks et tendances." },
+  { icon: FileText, title: "Reçois ton rapport en secondes", description: "Un diagnostic complet avec des recommandations actionnables." },
 ];
 
 export default function HowItWorksSection() {
@@ -34,7 +35,9 @@ export default function HowItWorksSection() {
               whileHover={{ y: -6 }}
               className="text-center group"
             >
-              <div className="text-4xl mb-4">{step.icon}</div>
+              <div className="w-12 h-12 mx-auto mb-4 rounded-xl flex items-center justify-center" style={{ border: "1px solid hsl(var(--border))" }}>
+                <step.icon className="w-5 h-5 text-primary" strokeWidth={1.5} />
+              </div>
               <div className="text-xs font-bold text-primary mb-2 tracking-widest uppercase">
                 Étape {i + 1}
               </div>
@@ -45,7 +48,7 @@ export default function HowItWorksSection() {
         </div>
 
         {/* Mobile: vertical */}
-        <div className="md:hidden space-y-8">
+        <div className="md:hidden space-y-6">
           {steps.map((step, i) => (
             <motion.div
               key={i}
@@ -55,7 +58,9 @@ export default function HowItWorksSection() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="flex items-start gap-4"
             >
-              <div className="text-3xl flex-shrink-0">{step.icon}</div>
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style={{ border: "1px solid hsl(var(--border))" }}>
+                <step.icon className="w-4 h-4 text-primary" strokeWidth={1.5} />
+              </div>
               <div>
                 <div className="text-xs font-bold text-primary mb-1 tracking-widest uppercase">
                   Étape {i + 1}
