@@ -17,21 +17,21 @@ export default function HeroSection() {
           L'algorithme TikTok a des secrets.
         </motion.p>
 
-        {/* Treasure map arrow pointing to Trakk */}
+        {/* Treasure map arrow from "secrets." down to "Trakk." */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.4, delay: 0.5 }}
-          className="flex justify-end pr-[15%] md:pr-[18%] my-2"
+          className="flex justify-center my-1"
         >
           <svg
-            width="80"
-            height="80"
-            viewBox="0 0 80 80"
+            width="200"
+            height="60"
+            viewBox="0 0 200 60"
             fill="none"
           >
             <motion.path
-              d="M10 8 C25 12, 35 5, 45 15 C55 25, 30 35, 50 40 C70 45, 55 55, 65 60 M58 52 L65 62 L54 60"
+              d="M160 2 C140 8, 120 5, 100 15 C80 25, 90 35, 60 40 C40 45, 50 50, 38 55"
               stroke="white"
               strokeWidth="2"
               strokeLinecap="round"
@@ -41,15 +41,6 @@ export default function HeroSection() {
               animate={{ pathLength: 1 }}
               transition={{ duration: 1.2, delay: 0.6, ease: "easeInOut" }}
             />
-            {/* Small X mark */}
-            <motion.g
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.3, delay: 1.8 }}
-            >
-              <line x1="68" y1="64" x2="76" y2="72" stroke="#FFD700" strokeWidth="2.5" strokeLinecap="round" />
-              <line x1="76" y1="64" x2="68" y2="72" stroke="#FFD700" strokeWidth="2.5" strokeLinecap="round" />
-            </motion.g>
           </svg>
         </motion.div>
 
