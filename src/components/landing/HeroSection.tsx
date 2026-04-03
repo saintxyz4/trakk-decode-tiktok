@@ -66,15 +66,18 @@ export default function HeroSection() {
 
       {/* Bottom fade overlay for seamless transition */}
       <div
-        className="absolute bottom-0 left-0 right-0 h-40 z-[2] pointer-events-none"
+        className="absolute bottom-0 left-0 right-0 z-[2] pointer-events-none"
         style={{
+          height: '70%',
           background: `linear-gradient(to bottom,
             transparent 0%,
-            hsla(240, 60%, 25%, 0.05) 20%,
-            hsla(240, 60%, 25%, 0.15) 40%,
-            hsla(240, 60%, 25%, 0.35) 55%,
-            hsla(240, 60%, 25%, 0.6) 70%,
-            hsla(240, 60%, 25%, 0.85) 85%,
+            hsla(240, 60%, 25%, 0.03) 30%,
+            hsla(240, 60%, 25%, 0.08) 42%,
+            hsla(240, 60%, 25%, 0.18) 52%,
+            hsla(240, 60%, 25%, 0.35) 62%,
+            hsla(240, 60%, 25%, 0.58) 72%,
+            hsla(240, 60%, 25%, 0.80) 82%,
+            hsla(240, 60%, 25%, 0.95) 91%,
             hsl(240, 60%, 25%) 100%
           )`,
         }}
