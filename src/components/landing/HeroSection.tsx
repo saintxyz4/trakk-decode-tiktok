@@ -84,8 +84,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
           className="text-3xl md:text-5xl lg:text-6xl font-bold text-primary-foreground text-center leading-tight"
         >
-          Comprends pourquoi tes vidéos TikTok performent —{" "}
-          <span className="font-accent-light super-glow">ou pas.</span>
+          Vos vidéos TikTok méritent mieux que des stats floues
         </motion.p>
 
         {/* Subheadline */}
