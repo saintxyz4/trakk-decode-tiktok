@@ -84,7 +84,8 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
           className="text-3xl md:text-5xl lg:text-6xl font-bold text-primary-foreground text-center leading-tight"
         >
-          Vos vidéos TikTok méritent mieux que des stats floues
+          Vos vidéos TikTok méritent mieux que des stats{" "}
+          <span style={{ filter: "blur(1.5px)", WebkitFilter: "blur(1.5px)" }} className="inline-block">floues</span>
         </motion.p>
 
         {/* Subheadline */}
@@ -139,9 +140,9 @@ export default function HeroSection() {
             transition={{ delay: 1.4, duration: 0.6 }}
             className="mt-4 text-center text-xs text-primary-foreground/50 flex items-center justify-center gap-4 flex-wrap"
           >
-            <span>✓ Gratuit</span>
-            <span>✓ Sans compte</span>
-            <span>✓ En moins de 10 secondes</span>
+            <span><span style={{ color: "hsl(142 70% 55%)", textShadow: "0 0 8px hsla(142, 70%, 55%, 0.5)" }}>✓</span> Gratuit</span>
+            <span><span style={{ color: "hsl(142 70% 55%)", textShadow: "0 0 8px hsla(142, 70%, 55%, 0.5)" }}>✓</span> Sans compte</span>
+            <span><span style={{ color: "hsl(142 70% 55%)", textShadow: "0 0 8px hsla(142, 70%, 55%, 0.5)" }}>✓</span> En moins de 10 secondes</span>
           </motion.p>
         </motion.div>
       </div>
