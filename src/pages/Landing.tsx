@@ -69,8 +69,13 @@ export default function Landing() {
 
       <HeroSection />
 
-      {/* Gradient transition from hero to features */}
-      <div className="h-32 bg-gradient-to-b from-[hsl(240,60%,25%)] to-background" />
+      {/* Smooth gradient transition hero → features */}
+      <div
+        className="h-40"
+        style={{
+          background: "linear-gradient(to bottom, hsl(240, 60%, 25%) 0%, hsl(240, 30%, 40%) 25%, hsl(240, 15%, 60%) 50%, hsl(40, 7%, 92%) 80%, hsl(40, 7%, 96%) 100%)",
+        }}
+      />
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
