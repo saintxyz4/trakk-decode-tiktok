@@ -86,7 +86,7 @@ export default function PricingSection() {
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeUp}
-              whileHover={{ y: -6, transition: { duration: 0.2 } }}
+              whileHover={{ y: -6, boxShadow: "0 20px 40px -12px hsla(244, 95%, 57%, 0.15)", transition: { duration: 0.25 } }}
               className={`glass-card p-8 flex flex-col ${tier.highlighted ? "ring-2 ring-primary shadow-lg relative" : ""}`}
             >
               {tier.highlighted && (

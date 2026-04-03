@@ -12,7 +12,7 @@ const navItems = [
 
 export default function Landing() {
   return (
-    <div className="min-h-screen bg-background scroll-smooth">
+    <div className="min-h-screen bg-background" style={{ scrollBehavior: "smooth" }}>
       {/* Nav */}
       <motion.nav
         initial={{ y: -20, opacity: 0 }}
