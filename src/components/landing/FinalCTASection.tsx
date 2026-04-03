@@ -55,18 +55,6 @@ export default function FinalCTASection() {
           </Link>
         </motion.div>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5, duration: 0.6 }}
-          className="mt-6 text-xs flex items-center justify-center gap-4 flex-wrap"
-          style={{ color: 'rgba(255,255,255,0.4)' }}
-        >
-          <span>✓ Gratuit</span>
-          <span>✓ Sans inscription</span>
-          <span>✓ Résultat en moins de 10 secondes</span>
-        </motion.p>
       </div>
     </section>
   );

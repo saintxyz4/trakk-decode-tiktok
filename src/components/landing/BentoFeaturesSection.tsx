@@ -234,10 +234,10 @@ function BlockC() {
 
 /* ─── BLOCK D — Comparison ─── */
 const comparisons = [
-  { left: "Vous postez et espérez", right: "Vous analysez avant de publier", leftIcon: "😐", rightIcon: "🎯" },
-  { left: "Statistiques TikTok floues", right: "Score clair sur 100", leftIcon: "🌫️", rightIcon: "📊" },
-  { left: "Vous copiez des trends", right: "Vous les anticipez", leftIcon: "🐌", rightIcon: "⚡" },
-  { left: "0 feedback actionnable", right: "1 recommandation concrète par vidéo", leftIcon: "❌", rightIcon: "💡" },
+  { left: "Vous postez et espérez", right: "Vous analysez avant de publier" },
+  { left: "Statistiques TikTok floues", right: "Score clair sur 100" },
+  { left: "Vous copiez des trends", right: "Vous les anticipez" },
+  { left: "0 feedback actionnable", right: "1 recommandation concrète par vidéo" },
 ];
 
 function BlockD() {
@@ -268,12 +268,12 @@ function BlockD() {
         {comparisons.map((row, i) => (
           <div key={i} className="contents">
             <span className="text-muted-foreground py-2.5 flex items-center gap-2">
-              <span className="text-base">{row.leftIcon}</span>
+              <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "hsl(0 70% 55%)" }} />
               {row.left}
             </span>
             <div className="w-px self-stretch" style={{ backgroundColor: "hsl(var(--border))" }} />
             <span className="text-foreground font-medium py-2.5 flex items-center gap-2">
-              <span className="text-base">{row.rightIcon}</span>
+              <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: "hsl(142 70% 55%)" }} />
               {row.right}
             </span>
           </div>
