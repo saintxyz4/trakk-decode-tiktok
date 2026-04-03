@@ -1,11 +1,104 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import AnimatedBlobs from "./AnimatedBlobs";
+import trakkGraph from "@/assets/trakk-graph.png";
 
 export default function HeroSection() {
   return (
     <section className="relative hero-gradient pt-32 pb-28 overflow-hidden">
       <AnimatedBlobs />
+
+      {/* Background graph with electricity animation */}
+      <div className="absolute inset-0 flex items-center justify-center z-[1] pointer-events-none">
+        <motion.img
+          src={trakkGraph}
+          alt=""
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 0.15, scale: 1 }}
+          transition={{ duration: 1.2, delay: 0.3 }}
+          className="w-[500px] md:w-[650px] lg:w-[750px] h-auto"
+        />
+        {/* Electricity pulse overlay */}
+        <svg
+          className="absolute w-[500px] md:w-[650px] lg:w-[750px] h-[500px] md:h-[650px] lg:h-[750px]"
+          viewBox="0 0 1024 1024"
+          fill="none"
+        >
+          <defs>
+            <linearGradient id="elec-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="hsl(244, 95%, 57%)" stopOpacity="0" />
+              <stop offset="40%" stopColor="hsl(244, 95%, 75%)" stopOpacity="1" />
+              <stop offset="60%" stopColor="hsl(0, 0%, 100%)" stopOpacity="1" />
+              <stop offset="100%" stopColor="hsl(244, 95%, 57%)" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+          {/* Main path tracing the graph shape */}
+          <motion.path
+            d="M200,780 L380,620 L460,700 L620,380 L720,300"
+            stroke="url(#elec-grad)"
+            strokeWidth="6"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            fill="none"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: [0, 1, 0] }}
+            transition={{
+              duration: 2.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+              repeatDelay: 0.5,
+            }}
+          />
+          {/* Glow layer */}
+          <motion.path
+            d="M200,780 L380,620 L460,700 L620,380 L720,300"
+            stroke="hsl(244, 95%, 75%)"
+            strokeWidth="14"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            fill="none"
+            filter="blur(8px)"
+            opacity={0.4}
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: [0, 1, 0] }}
+            transition={{
+              duration: 2.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+              repeatDelay: 0.5,
+            }}
+          />
+          {/* Dot at the tip */}
+          <motion.circle
+            cx="720"
+            cy="300"
+            r="12"
+            fill="hsl(244, 95%, 75%)"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: [0, 0, 1, 1, 0] }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              times: [0, 0.6, 0.7, 0.9, 1],
+            }}
+          />
+          <motion.circle
+            cx="720"
+            cy="300"
+            r="24"
+            fill="hsl(244, 95%, 75%)"
+            filter="blur(12px)"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: [0, 0, 0.6, 0.6, 0] }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              times: [0, 0.6, 0.7, 0.9, 1],
+            }}
+          />
+        </svg>
+      </div>
+
       <div className="container relative z-10 max-w-3xl mx-auto px-6">
         {/* Line 1 */}
         <motion.p
@@ -17,6 +110,8 @@ export default function HeroSection() {
           L'algorithme TikTok a des secrets.
         </motion.p>
 
+        {/* Spacer */}
+        <div className="h-10 md:h-16" />
 
         {/* Line 2 */}
         <motion.p
