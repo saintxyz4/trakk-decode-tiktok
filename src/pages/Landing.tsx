@@ -2,12 +2,11 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import HeroSection from "@/components/landing/HeroSection";
-import FeaturesSection from "@/components/landing/FeaturesSection";
 import StatsSection from "@/components/landing/StatsSection";
-import DemoSection from "@/components/landing/DemoSection";
+import HowItWorksSection from "@/components/landing/HowItWorksSection";
+import BentoFeaturesSection from "@/components/landing/BentoFeaturesSection";
 import TestimonialsSection from "@/components/landing/TestimonialsSection";
-import PricingSection from "@/components/landing/PricingSection";
-import FAQSection from "@/components/landing/FAQSection";
+import FinalCTASection from "@/components/landing/FinalCTASection";
 
 const navItems = [
   { label: "Fonctionnalités", href: "#features" },
@@ -74,9 +73,11 @@ export default function Landing() {
         </div>
       </motion.nav>
 
-      <HeroSection />
+      <div id="hero-input">
+        <HeroSection />
+      </div>
 
-      {/* Smooth gradient transition hero → features */}
+      {/* Smooth gradient transition hero → content */}
       <div
         className="h-72"
         style={{
@@ -96,15 +97,7 @@ export default function Landing() {
         }}
       />
 
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-80px" }}
-        transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-      >
-        <FeaturesSection />
-      </motion.div>
-
+      {/* Trust bar */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -114,15 +107,27 @@ export default function Landing() {
         <StatsSection />
       </motion.div>
 
+      {/* How it works */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        <DemoSection />
+        <HowItWorksSection />
       </motion.div>
 
+      {/* Bento features */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        <BentoFeaturesSection />
+      </motion.div>
+
+      {/* Testimonials placeholder */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -132,22 +137,14 @@ export default function Landing() {
         <TestimonialsSection />
       </motion.div>
 
+      {/* Final CTA */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        <PricingSection />
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-80px" }}
-        transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-      >
-        <FAQSection />
+        <FinalCTASection />
       </motion.div>
 
       {/* Footer */}
@@ -158,8 +155,16 @@ export default function Landing() {
         transition={{ duration: 0.6 }}
         className="py-12 border-t border-thin border-border"
       >
-        <div className="container text-center text-sm text-muted-foreground">
-          © 2026 Trakk. Tous droits réservés.
+        <div className="container flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
+          <span className="font-semibold text-foreground">
+            Trakk<span className="font-accent text-sm super-glow-dark">.</span>
+          </span>
+          <div className="flex items-center gap-6">
+            <a href="#" className="hover:text-foreground transition-colors">Mentions légales</a>
+            <a href="#" className="hover:text-foreground transition-colors">Confidentialité</a>
+            <a href="#" className="hover:text-foreground transition-colors">Contact</a>
+          </div>
+          <span>© 2026 Trakk. Tous droits réservés.</span>
         </div>
       </motion.footer>
     </div>
