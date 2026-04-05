@@ -5,6 +5,7 @@ import HeroSection from "@/components/landing/HeroSection";
 import StatsSection from "@/components/landing/StatsSection";
 import HowItWorksSection from "@/components/landing/HowItWorksSection";
 import BentoFeaturesSection from "@/components/landing/BentoFeaturesSection";
+import ReportOverviewSection from "@/components/landing/ReportOverviewSection";
 import TestimonialsSection from "@/components/landing/TestimonialsSection";
 import FinalCTASection from "@/components/landing/FinalCTASection";
 
