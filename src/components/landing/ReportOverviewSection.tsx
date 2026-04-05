@@ -62,7 +62,7 @@ export default function ReportOverviewSection() {
         >
           <h2 className="text-3xl md:text-4xl font-bold text-[#F5F5F3]">
             Un rapport que vous n'attendiez{" "}
-            <span className="font-accent" style={{ color: "#6C63FF", filter: "blur(1.2px)", WebkitFilter: "blur(1.2px)" }}>pas.</span>
+            <span className="font-accent super-glow" style={{ color: "#6C63FF" }}>pas.</span>
           </h2>
           <p className="mt-3 text-[#999] max-w-md mx-auto text-sm">
             Voici ce que vous obtenez après chaque analyse — données fictives à titre d'exemple.
