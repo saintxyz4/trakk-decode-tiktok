@@ -33,7 +33,7 @@ const badges = [
 ];
 
 const metrics = [
-  { label: "Hook (3 premières sec.)", value: "62%", color: "#D4890A", context: "rétention" },
+  { label: "Hook (5 premières sec.)", value: "62%", color: "#D4890A", context: "rétention" },
   { label: "Durée moy. visionnage", value: "18s", color: "#1B8A30", context: "/ 24s total" },
   { label: "Visionnage complet", value: "34%", color: "#6C63FF", context: "des viewers" },
   { label: "CTA / Conversions", value: "4.2%", color: "#1B8A30", context: "taux clic lien" },
@@ -61,8 +61,8 @@ export default function ReportOverviewSection() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-[#F5F5F3]">
-            Aperçu d'un{" "}
-            <span className="font-accent" style={{ color: "#6C63FF" }}>rapport</span>
+            Un rapport que vous n'attendiez{" "}
+            <span className="font-accent" style={{ color: "#6C63FF" }}>pas.</span>
           </h2>
           <p className="mt-3 text-[#999] max-w-md mx-auto text-sm">
             Voici ce que vous obtenez après chaque analyse — données fictives à titre d'exemple.
@@ -107,10 +107,10 @@ export default function ReportOverviewSection() {
                   Score global
                 </p>
                 <div className="flex items-baseline gap-1">
-                  <span style={{ fontSize: 48, fontWeight: 600, color: "#6C63FF", lineHeight: 1 }}>
+                 <span className="tracking-tight" style={{ fontSize: 48, fontWeight: 700, color: "#6C63FF", lineHeight: 1, fontFamily: "var(--font-sans)" }}>
                     <AnimatedCounter target={15} />
                   </span>
-                  <span style={{ fontSize: 20, color: "#BBB" }}>/ 20</span>
+                  <span className="tracking-tight" style={{ fontSize: 20, color: "#BBB", fontWeight: 500 }}>/ 20</span>
                 </div>
               </div>
               <div
@@ -177,7 +177,7 @@ export default function ReportOverviewSection() {
                   <div key={m.label} className="rounded-[10px] px-4 py-3.5" style={{ background: "#F7F7F5" }}>
                     <p style={{ fontSize: 11, color: "#999", marginBottom: 4 }}>{m.label}</p>
                     <div className="flex items-baseline gap-1.5">
-                      <span style={{ fontSize: 22, fontWeight: 600, color: m.color }}>{m.value}</span>
+                      <span className="tracking-tight" style={{ fontSize: 22, fontWeight: 700, color: m.color }}>{m.value}</span>
                       <span style={{ fontSize: 12, color: "#999" }}>{m.context}</span>
                     </div>
                   </div>

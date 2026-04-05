@@ -353,7 +353,6 @@ export default function BentoFeaturesSection() {
         </motion.div>
 
         <BlockA />
-        <BlockB />
         <BlockC />
         <BlockD />
 
