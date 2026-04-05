@@ -128,51 +128,47 @@ export default function Landing() {
         <BentoFeaturesSection />
       </motion.div>
 
-      {/* Gradient: light → dark (before Report) */}
-      <div className="h-48" style={{
-        background: `linear-gradient(to bottom,
-          hsl(40, 7%, 96%) 0%,
-          hsl(40, 6%, 93%) 10%,
-          hsl(40, 5%, 88%) 20%,
-          hsl(35, 4%, 78%) 30%,
-          hsl(30, 3%, 62%) 40%,
-          hsl(20, 2%, 42%) 52%,
-          hsl(10, 1%, 26%) 64%,
-          hsl(0, 0%, 14%) 76%,
-          hsl(0, 0%, 8%) 88%,
-          hsl(0, 0%, 4%) 100%
-        )`
-      }} />
-
-      {/* Report overview demo */}
+      {/* Gradient + Report + Gradient: no translateY to avoid white flash */}
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         viewport={{ once: true, margin: "-80px" }}
-        transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
       >
+        <div className="h-48" style={{
+          background: `linear-gradient(to bottom,
+            hsl(40, 7%, 96%) 0%,
+            hsl(40, 6%, 93%) 10%,
+            hsl(40, 5%, 88%) 20%,
+            hsl(35, 4%, 78%) 30%,
+            hsl(30, 3%, 62%) 40%,
+            hsl(20, 2%, 42%) 52%,
+            hsl(10, 1%, 26%) 64%,
+            hsl(0, 0%, 14%) 76%,
+            hsl(0, 0%, 8%) 88%,
+            hsl(0, 0%, 4%) 100%
+          )`
+        }} />
         <ReportOverviewSection />
+        <div className="h-56" style={{
+          background: `linear-gradient(to bottom,
+            hsl(0, 0%, 4%) 0%,
+            hsl(0, 0%, 6%) 8%,
+            hsl(0, 0%, 10%) 18%,
+            hsl(0, 0%, 16%) 28%,
+            hsl(0, 0%, 24%) 38%,
+            hsl(15, 2%, 42%) 50%,
+            hsl(25, 3%, 60%) 60%,
+            hsl(32, 4%, 75%) 70%,
+            hsl(37, 5%, 85%) 80%,
+            hsl(40, 6%, 91%) 88%,
+            hsl(40, 7%, 94%) 94%,
+            hsl(40, 7%, 96%) 100%
+          )`
+        }} />
       </motion.div>
 
-      {/* Gradient: dark → light (before Testimonials) */}
-      <div className="h-56" style={{
-        background: `linear-gradient(to bottom,
-          hsl(0, 0%, 4%) 0%,
-          hsl(0, 0%, 6%) 8%,
-          hsl(0, 0%, 10%) 18%,
-          hsl(0, 0%, 16%) 28%,
-          hsl(0, 0%, 24%) 38%,
-          hsl(15, 2%, 42%) 50%,
-          hsl(25, 3%, 60%) 60%,
-          hsl(32, 4%, 75%) 70%,
-          hsl(37, 5%, 85%) 80%,
-          hsl(40, 6%, 91%) 88%,
-          hsl(40, 7%, 94%) 94%,
-          hsl(40, 7%, 96%) 100%
-        )`
-      }} />
-
-      {/* Testimonials placeholder */}
+      {/* Testimonials */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -182,29 +178,27 @@ export default function Landing() {
         <TestimonialsSection />
       </motion.div>
 
-      {/* Gradient: light → dark (before Final CTA) */}
-      <div className="h-48" style={{
-        background: `linear-gradient(to bottom,
-          hsl(40, 7%, 96%) 0%,
-          hsl(40, 6%, 93%) 10%,
-          hsl(40, 5%, 88%) 20%,
-          hsl(35, 4%, 78%) 30%,
-          hsl(25, 3%, 58%) 42%,
-          hsl(250, 8%, 32%) 55%,
-          hsl(244, 20%, 18%) 68%,
-          hsl(244, 35%, 13%) 80%,
-          hsl(244, 40%, 12%) 90%,
-          hsl(0, 0%, 4%) 100%
-        )`
-      }} />
-
-      {/* Final CTA */}
+      {/* Gradient + Final CTA: no translateY */}
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         viewport={{ once: true, margin: "-80px" }}
-        transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
       >
+        <div className="h-48" style={{
+          background: `linear-gradient(to bottom,
+            hsl(40, 7%, 96%) 0%,
+            hsl(40, 6%, 93%) 10%,
+            hsl(40, 5%, 88%) 20%,
+            hsl(35, 4%, 78%) 30%,
+            hsl(25, 3%, 58%) 42%,
+            hsl(250, 8%, 32%) 55%,
+            hsl(244, 20%, 18%) 68%,
+            hsl(244, 35%, 13%) 80%,
+            hsl(244, 40%, 12%) 90%,
+            hsl(0, 0%, 4%) 100%
+          )`
+        }} />
         <FinalCTASection />
       </motion.div>
 
