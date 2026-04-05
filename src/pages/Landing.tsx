@@ -155,17 +155,19 @@ export default function Landing() {
       </motion.div>
 
       {/* Gradient: dark → light (before Testimonials) */}
-      <div className="h-48" style={{
+      <div className="h-56" style={{
         background: `linear-gradient(to bottom,
           hsl(0, 0%, 4%) 0%,
-          hsl(0, 0%, 8%) 12%,
-          hsl(0, 0%, 14%) 24%,
-          hsl(10, 1%, 26%) 36%,
-          hsl(20, 2%, 42%) 48%,
-          hsl(30, 3%, 62%) 60%,
-          hsl(35, 4%, 78%) 72%,
-          hsl(40, 5%, 88%) 82%,
-          hsl(40, 6%, 93%) 91%,
+          hsl(0, 0%, 6%) 8%,
+          hsl(0, 0%, 10%) 18%,
+          hsl(0, 0%, 16%) 28%,
+          hsl(0, 0%, 24%) 38%,
+          hsl(15, 2%, 42%) 50%,
+          hsl(25, 3%, 60%) 60%,
+          hsl(32, 4%, 75%) 70%,
+          hsl(37, 5%, 85%) 80%,
+          hsl(40, 6%, 91%) 88%,
+          hsl(40, 7%, 94%) 94%,
           hsl(40, 7%, 96%) 100%
         )`
       }} />
