@@ -185,18 +185,20 @@ export default function Landing() {
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        <div className="h-48" style={{
+        <div className="h-56" style={{
           background: `linear-gradient(to bottom,
             hsl(40, 7%, 96%) 0%,
-            hsl(40, 6%, 93%) 10%,
-            hsl(40, 5%, 88%) 20%,
-            hsl(35, 4%, 78%) 30%,
-            hsl(25, 3%, 58%) 42%,
-            hsl(250, 8%, 32%) 55%,
-            hsl(244, 20%, 18%) 68%,
-            hsl(244, 35%, 13%) 80%,
-            hsl(244, 40%, 12%) 90%,
-            hsl(0, 0%, 4%) 100%
+            hsl(40, 6%, 93%) 8%,
+            hsl(40, 5%, 88%) 16%,
+            hsl(35, 4%, 78%) 24%,
+            hsl(30, 3%, 65%) 32%,
+            hsl(270, 6%, 48%) 40%,
+            hsl(250, 12%, 34%) 50%,
+            hsl(244, 22%, 24%) 60%,
+            hsl(244, 32%, 18%) 70%,
+            hsl(244, 38%, 14%) 80%,
+            hsl(244, 42%, 12%) 90%,
+            hsl(244, 40%, 12%) 100%
           )`
         }} />
         <FinalCTASection />
