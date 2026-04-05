@@ -50,7 +50,7 @@ const fadeUp = {
 
 export default function ReportOverviewSection() {
   return (
-    <section className="py-24 overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(240, 60%, 25%) 0%, hsl(244, 60%, 30%) 50%, hsl(240, 60%, 25%) 100%)' }}>
+    <section className="py-24 overflow-hidden" style={{ background: 'hsl(240, 60%, 25%)' }}>
       <div className="container max-w-3xl">
         {/* Section header */}
         <motion.div
@@ -120,7 +120,7 @@ export default function ReportOverviewSection() {
                 <p style={{ fontSize: 11, color: "#999", textTransform: "uppercase", letterSpacing: "0.5px", marginBottom: 2 }}>
                   Tendance
                 </p>
-                <p style={{ fontSize: 14, color: "#28C840", fontWeight: 500 }}>+12% vs habitude</p>
+                <p style={{ fontSize: 14, color: "#28C840", fontWeight: 500 }}>+12% par rapport à la moyenne</p>
               </div>
             </motion.div>
 
@@ -132,7 +132,7 @@ export default function ReportOverviewSection() {
             >
               <p style={{ fontSize: 14, lineHeight: 1.6, color: "#333" }}>
                 Votre vidéo performe{" "}
-                <strong style={{ color: "#6C63FF" }}>mieux que d'habitude</strong>, mais le hook
+                <span className="font-accent" style={{ color: "#6C63FF", fontStyle: "italic" }}>mieux que d'habitude</span>, mais le hook
                 manque d'impact pour maximiser la rétention au-delà des 5 premières secondes.
               </p>
             </motion.div>
