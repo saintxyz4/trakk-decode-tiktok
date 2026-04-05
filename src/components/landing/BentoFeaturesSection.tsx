@@ -1,6 +1,6 @@
-import { motion, useAnimation } from "framer-motion";
-import { Link2, Zap, FileText, Target, Search, MessageSquare, TrendingUp, Check, AlertTriangle, Lock } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import { Link2, Zap, FileText, Target, Search, MessageSquare, TrendingUp } from "lucide-react";
+
 
 /* ─── BLOCK A — How it works ─── */
 const steps = [
