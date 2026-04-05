@@ -128,6 +128,18 @@ export default function Landing() {
         <BentoFeaturesSection />
       </motion.div>
 
+      {/* Gradient: light → dark (before Report) */}
+      <div className="h-40" style={{
+        background: `linear-gradient(to bottom,
+          hsl(40, 7%, 96%) 0%,
+          hsla(40, 7%, 90%, 0.8) 15%,
+          hsla(240, 10%, 50%, 0.15) 35%,
+          hsla(240, 15%, 25%, 0.4) 55%,
+          hsla(0, 0%, 8%, 0.75) 75%,
+          hsl(0, 0%, 4%) 100%
+        )`
+      }} />
+
       {/* Report overview demo */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -138,6 +150,18 @@ export default function Landing() {
         <ReportOverviewSection />
       </motion.div>
 
+      {/* Gradient: dark → light (before Testimonials) */}
+      <div className="h-40" style={{
+        background: `linear-gradient(to bottom,
+          hsl(0, 0%, 4%) 0%,
+          hsla(0, 0%, 8%, 0.75) 25%,
+          hsla(240, 15%, 25%, 0.4) 45%,
+          hsla(240, 10%, 50%, 0.15) 65%,
+          hsla(40, 7%, 90%, 0.8) 85%,
+          hsl(40, 7%, 96%) 100%
+        )`
+      }} />
+
       {/* Testimonials placeholder */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -147,6 +171,18 @@ export default function Landing() {
       >
         <TestimonialsSection />
       </motion.div>
+
+      {/* Gradient: light → dark (before Final CTA) */}
+      <div className="h-40" style={{
+        background: `linear-gradient(to bottom,
+          hsl(40, 7%, 96%) 0%,
+          hsla(40, 7%, 90%, 0.8) 15%,
+          hsla(240, 10%, 50%, 0.15) 35%,
+          hsla(240, 20%, 20%, 0.5) 55%,
+          hsla(244, 40%, 12%, 0.85) 75%,
+          hsl(0, 0%, 4%) 100%
+        )`
+      }} />
 
       {/* Final CTA */}
       <motion.div
