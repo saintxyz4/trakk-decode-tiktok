@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function FinalCTASection() {
   return (
     <section className="py-28 relative overflow-hidden" style={{
-      background: 'linear-gradient(135deg, hsl(0, 0%, 4%) 0%, hsl(244, 40%, 12%) 50%, hsl(244, 60%, 18%) 100%)',
+      background: 'linear-gradient(135deg, hsl(244, 40%, 12%) 0%, hsl(244, 40%, 12%) 30%, hsl(244, 60%, 18%) 100%)',
     }}>
       {/* Subtle glow */}
       <div className="absolute inset-0 pointer-events-none" style={{
