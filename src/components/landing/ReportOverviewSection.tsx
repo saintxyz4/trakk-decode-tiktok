@@ -107,7 +107,7 @@ export default function ReportOverviewSection() {
                   Score global
                 </p>
                 <div className="flex items-baseline gap-1">
-                 <span className="tracking-tight" style={{ fontSize: 48, fontWeight: 700, color: "#6C63FF", lineHeight: 1, fontFamily: "var(--font-sans)" }}>
+                 <span className="tracking-tight font-accent" style={{ fontSize: 48, fontWeight: 700, color: "#6C63FF", lineHeight: 1 }}>
                     <AnimatedCounter target={15} />
                   </span>
                   <span className="tracking-tight" style={{ fontSize: 20, color: "#BBB", fontWeight: 500 }}>/ 20</span>
