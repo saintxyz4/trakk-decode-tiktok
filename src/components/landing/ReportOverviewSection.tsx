@@ -133,7 +133,7 @@ export default function ReportOverviewSection() {
               <p style={{ fontSize: 14, lineHeight: 1.6, color: "#333" }}>
                 Votre vidéo performe{" "}
                 <strong style={{ color: "#6C63FF" }}>mieux que d'habitude</strong>, mais le hook
-                manque d'impact pour maximiser la rétention au-delà des 3 premières secondes.
+                manque d'impact pour maximiser la rétention au-delà des 5 premières secondes.
               </p>
             </motion.div>
 
