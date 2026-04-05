@@ -129,13 +129,17 @@ export default function Landing() {
       </motion.div>
 
       {/* Gradient: light → dark (before Report) */}
-      <div className="h-40" style={{
+      <div className="h-48" style={{
         background: `linear-gradient(to bottom,
           hsl(40, 7%, 96%) 0%,
-          hsla(40, 7%, 90%, 0.8) 15%,
-          hsla(240, 10%, 50%, 0.15) 35%,
-          hsla(240, 15%, 25%, 0.4) 55%,
-          hsla(0, 0%, 8%, 0.75) 75%,
+          hsl(40, 6%, 93%) 10%,
+          hsl(40, 5%, 88%) 20%,
+          hsl(35, 4%, 78%) 30%,
+          hsl(30, 3%, 62%) 40%,
+          hsl(20, 2%, 42%) 52%,
+          hsl(10, 1%, 26%) 64%,
+          hsl(0, 0%, 14%) 76%,
+          hsl(0, 0%, 8%) 88%,
           hsl(0, 0%, 4%) 100%
         )`
       }} />
@@ -151,13 +155,19 @@ export default function Landing() {
       </motion.div>
 
       {/* Gradient: dark → light (before Testimonials) */}
-      <div className="h-40" style={{
+      <div className="h-56" style={{
         background: `linear-gradient(to bottom,
           hsl(0, 0%, 4%) 0%,
-          hsla(0, 0%, 8%, 0.75) 25%,
-          hsla(240, 15%, 25%, 0.4) 45%,
-          hsla(240, 10%, 50%, 0.15) 65%,
-          hsla(40, 7%, 90%, 0.8) 85%,
+          hsl(0, 0%, 6%) 8%,
+          hsl(0, 0%, 10%) 18%,
+          hsl(0, 0%, 16%) 28%,
+          hsl(0, 0%, 24%) 38%,
+          hsl(15, 2%, 42%) 50%,
+          hsl(25, 3%, 60%) 60%,
+          hsl(32, 4%, 75%) 70%,
+          hsl(37, 5%, 85%) 80%,
+          hsl(40, 6%, 91%) 88%,
+          hsl(40, 7%, 94%) 94%,
           hsl(40, 7%, 96%) 100%
         )`
       }} />
@@ -173,13 +183,17 @@ export default function Landing() {
       </motion.div>
 
       {/* Gradient: light → dark (before Final CTA) */}
-      <div className="h-40" style={{
+      <div className="h-48" style={{
         background: `linear-gradient(to bottom,
           hsl(40, 7%, 96%) 0%,
-          hsla(40, 7%, 90%, 0.8) 15%,
-          hsla(240, 10%, 50%, 0.15) 35%,
-          hsla(240, 20%, 20%, 0.5) 55%,
-          hsla(244, 40%, 12%, 0.85) 75%,
+          hsl(40, 6%, 93%) 10%,
+          hsl(40, 5%, 88%) 20%,
+          hsl(35, 4%, 78%) 30%,
+          hsl(25, 3%, 58%) 42%,
+          hsl(250, 8%, 32%) 55%,
+          hsl(244, 20%, 18%) 68%,
+          hsl(244, 35%, 13%) 80%,
+          hsl(244, 40%, 12%) 90%,
           hsl(0, 0%, 4%) 100%
         )`
       }} />
